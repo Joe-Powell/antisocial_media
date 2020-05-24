@@ -79,7 +79,7 @@ if(isset($_SESSION['userId'])) {
 ?>
 
 <div class="postsContainer">
-<h2>Posts Below</h2>
+<h2 class='heading'>Posts Below</h2>
 
 <?php foreach($posts as $post) { ?>
 
@@ -130,6 +130,6 @@ if(isset($_SESSION['userId'])) {
 
 
 </div>
-
+</div>
 
 <?php require "./includes/footer.php";?>
