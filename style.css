@@ -1,7 +1,11 @@
 * {
 font-family: sans-serif;
-background-color:;
+padding:0px;
+margin:0px;
+
 }
+
+
 
 
 .signup {
@@ -42,57 +46,133 @@ input[type='password']{
 }
 
 
-/* NavBar styling */
+                         /* NavBar styling */
 
+        /* this container .containAll starts in the navbar */
+.containAll {               
+  display: flex;
+  flex-direction: row;
+ }                            
+
+.navbar {
+    height: 50vh;
+    width:6vw;
+    width: 150px;
+    padding:30px;
+    padding-top: 80px;
+    display: inline-block;
+  
+}
+
+
+/* by making the Ul fixed and not the whole navbar it works combined with 
+being in a container thats set to display flex flex-direction: row */
 .navbar ul {
+    position: fixed; 
+    height:50vh;
     display: flex;
+    flex-direction: column;
+   justify-content: space-evenly; 
+   
+
     }
+
 
 .navbar ul button {
    border:none;
-background-color: white;
+   background-color: white;
    color:red;
    font-size: 20px;
     }
 
+.navbar ul button:hover {
+        background-color: lightblue;
+        border-radius: 10px;
+        transition: 0.4s ease-in-out;
+
+    }
+
 .navbar ul a{
     text-decoration: none;
+    margin-right: 20px;
     }
+
 .navbar ul li{
   list-style: none;
- 
-  padding:0px 10px;
-    background-color: white;
+ padding:5px 5px;
+background-color: white;
   color:black;
   font-size: 20px;
+  width:100%;
+ 
+
+    }
+
+    .navbar ul li:hover{
+        background-color: lightblue;
+        border-radius: 10px;
+        transition: 0.5s ease-in-out;
+
     }
 
 
 
-    /* post.php styling */
+    @media screen and (max-width:450px){
+        .navbar {
+  
+            position: fixed;
+             height: 50vh;
+              width:6vw;
+              padding:20px;
+              padding-top: 80px;
+             display: flex;
+             justify-content: space-around;
+             flex-direction: column;
+             
+             
+         
+         }
 
-    .form-add-post {
+
+    }
+
+
+
+            /* post.php styling */
+
+    .add-post {
         outline: none;
         text-align: center;
         width: 50vw;
-        margin: auto;
-       
-        padding: 20px
+        
+        padding: 20px;
     }
 
-   .form-group textarea{
+    .textAreaDiv {
+        padding-top:200px;
+    
+       }
+
+   textarea{
+       border: none;
+    box-shadow: 1px 1px 3px 0px #888888;
+    
        height:20vh; 
-       width:50vw;
+       width:30vw;
+       resize: none;
+       outline: none;
         
    }
-   .form-group label{
+
+  
+   .form-group h2{
        display: block;
-      margin-top: 10px;
+      
       padding-bottom: 8px;
-      color:blue;
+       
    }
 
-   .form-add-post [type='submit'] {
+   .add-post [type='submit'] {
     background-color: white;
     border: none;
     color:blue;
@@ -111,25 +191,47 @@ background-color: white;
    }
 
 
-   /* posts.php css */
+                /* posts.php  */
+  
+    
+  
 
    .postsContainer {
+   display: inline-block;
+    padding-top: 20px;
+    width:50vw;
+     margin-left:0px; 
+     background-color: #F2F3F5; 
+    
+    
+      
+}
 
-    background-color: #73c2fb;
+
+   .postsContainer .heading {
+    padding-left: 10vw ;
+    padding-bottom: 30px;
    }
 
    .containerDivs {
-       width:50vw;
-        border:1px solid  #282C35;
-        margin: auto;
-        margin-bottom: 8px;
+       width:35vw;
+       height: fit-content;
+        min-height:100px;
+        box-shadow: 1px 1px 3px 0px #888888;
+        margin-left:2vw;
+        margin-bottom: 10px;
         border-radius: 9px;
-        padding: 13px;
+        padding: 10px;
         background-color: white;
         font-size: 13px;
 
 
    }
+
+.containerDivs:hover {
+    background-color: #F2F3F5; 
+    transition: 0.3s ease-in-out;
+}
 
    .containerDivs h4 {
     width:80%;
@@ -156,7 +258,48 @@ background-color: white;
 
    }
 
-   /* edit the posts in posts.php */
+
+
+   @media screen and (max-width:450px){
+    
+    .postsContainer {
+        width:80vw;
+        margin-left:20vw;
+        background-color: white;   
+
+        
+       }
+
+       .containerDivs {
+        width:70vw;
+        height: fit-content;
+         /* border:1px solid  #282C35; */
+         box-shadow: 1px 1px 3px 0px #888888;
+         margin: auto;
+         margin-bottom: 8px;
+         border-radius: 9px;
+         padding: 10px;
+         background-color: white;
+         font-size: 13px;
+ 
+ 
+    }
+
+
+   }
+
+   .addedDiv {
+       display:inline-block;
+       vertical-align:top;
+       width:200px;
+       
+      
+   }
+
+
+
+
+                    /* edit the posts in posts.php */
 
    .editAbsoluteDiv {
        display: flex;
@@ -208,6 +351,8 @@ background-color: white;
   
  
 }
+
+
 
 
 
