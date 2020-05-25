@@ -15,14 +15,14 @@
         include "navbar.php";
 
     }else{
-        include "navbar.php";
-echo ' <form class="form-login" action="index.php" method="post">
-            <input required type="text" name="unameEmail" id="" placeholder="Username/E-mail...."><br><br><br>
-            <input required type="password" name="pwd" id="password" >
-           
-            <button type="submit" name="login-submit">Login</button>
-        </form>
-    <a class="signup" href="register.php">Signup</a>';
+       
+echo ' <div class="contLogSignup"> <form class="form-login" action="index.php" method="post">
+                <input required type="text" name="unameEmail" id="" placeholder="Username/E-mail....">
+                <input required type="password" name="pwd" id="password" >
+                <button type="submit" name="login-submit">Login</button>
+            </form>
+        
+    <a class="signup" href="register.php">Signup</a> </div>';
 
 }
 
