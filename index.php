@@ -43,9 +43,8 @@
 <?php  
 
 if(isset($_SESSION['userId'])) {
-
-  echo '<p class ="login-status">You are logged in &#x1F603;	</p>';
-  echo "<br> <h3> Welcome " .$_SESSION['username']. ", your user Id # is " .$_SESSION['userId'];
+ echo ' <p class ="login-status">You are logged in &#x1F603;	</p>';
+  echo "<br> <h3 class ='login-status'> Welcome " .$_SESSION['username'] ." !</h3>" ;
 
 }else{
 
