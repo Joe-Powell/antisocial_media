@@ -262,14 +262,7 @@ being in a container thats set to display flex flex-direction: row */
    
     }
 
-    .containerDivs p {
-        width:fit-content;
-        display: inline-block;
-    }
 
-    .containerDivs .likeCount{
-        display: inline-block;
-    }
 
    .btnsWrapper {
      /* display:inline-block; */
