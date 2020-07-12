@@ -1,384 +1,385 @@
 * {
-font-family: sans-serif;
-padding:0px;
-margin:0px;
-
-}
-
-.contLogSignup {
-    padding:100px;
-}
-
-
-.signup {
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 25px;
+    font-family: sans-serif;
+    padding:0px;
+    margin:0px;
     
-}
-
-.login-status {
-    padding:20px 20px;
-}
-
-.form-login {
-    margin-top:40px;
-    margin-bottom:40px;
-}
-
-.form-login input{
-    margin-right:20px;
-    height:20px;
-    outline: none;
-    border:none;
-    border-bottom: 1px solid #282C35;
-    background-color: white;
-
-}
-.form-signup input{
-    margin:20px;
-    height:20px;
-    outline: none;
-    border:none;
-    border-bottom: 1px solid black;
-    background-color: white;
-
-}
-
-input[type='password']{
-    background: white;
+    }
     
-}
-
-
-            /* NavBar styling */
-
-.containAll {
-  display: flex;
-  flex-direction: row;
- }                            
-
-.navbar {
-    height: 50vh;
-    width:6vw;
-    width: 150px;
-    padding:30px;
-    padding-top: 80px;
-    display: inline-block;
-  
-}
-
-
-/* by making the Ul fixed and not the whole navbar it works combined with 
-being in a container thats set to display flex flex-direction: row */
-.navbar ul {
-    position: fixed; 
-    height:50vh;
-    display: flex;
-    flex-direction: column;
-   justify-content: space-evenly; 
-   
-
-    }
-
-
-.navbar ul button {
-   border:none;
-   background-color: white;
-   color:red;
-   font-size: 20px;
-    }
-
-.navbar ul button:hover {
-        background-color: lightblue;
-        border-radius: 10px;
-        transition: 0.4s ease-in-out;
-
-    }
-
-.navbar ul a{
-    text-decoration: none;
-    margin-right: 20px;
-    }
-
-.navbar ul li{
-  list-style: none;
-  padding:5px 5px;
-  background-color: white;
-  color:black;
-  font-size: 20px;
-  width:100%;
- 
-
-    }
-
-    .navbar ul li:hover{
-        background-color: lightblue;
-        border-radius: 10px;
-        transition: 0.5s ease-in-out;
-
+    .contLogSignup {
+        padding:100px;
     }
     
     
-    .logout {
-        width:27px;
-
+    .signup {
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 25px;
+        
     }
-
-
-
-    @media screen and (max-width:450px){
-        .navbar {
-  
-            position: fixed;
-             height: 50vh;
-              width:6vw;
-              padding:20px;
-              padding-top: 50px;
-             display: flex;
-             justify-content: space-around;
-             flex-direction: column;
-             
-             }
-
-        .navbar span {
-            display:none;
-        }     
-
-
+    
+    .login-status {
+        padding:20px 20px;
     }
-
-
-
-            /* post.php styling */
-
-    .add-post {
+    
+    .form-login {
+        margin-top:40px;
+        margin-bottom:40px;
+    }
+    
+    .form-login input{
+        margin-right:20px;
+        height:20px;
         outline: none;
-        text-align: center;
-        padding: 20px;
+        border:none;
+        border-bottom: 1px solid #282C35;
+        background-color: white;
+    
     }
-
-    .textAreaDiv {
-        padding-top:200px;
+    .form-signup input{
+        margin:20px;
+        height:20px;
+        outline: none;
+        border:none;
+        border-bottom: 1px solid black;
+        background-color: white;
+    
+    }
+    
+    input[type='password']{
+        background: white;
+        
+    }
+    
+    
+                /* NavBar styling */
+    
+    .containAll {
+      display: flex;
+      flex-direction: row;
+     }                            
+    
+    .navbar {
+        height: 50vh;
+        width:6vw;
+        width: 150px;
+        padding:30px;
+        padding-top: 80px;
+        display: inline-block;
+      
+    }
+    
+    
+    /* by making the Ul fixed and not the whole navbar it works combined with 
+    being in a container thats set to display flex flex-direction: row */
+    .navbar ul {
+        position: fixed; 
+        height:50vh;
+        display: flex;
+        flex-direction: column;
+       justify-content: space-evenly; 
+       
+    
+        }
+    
+    
+    .navbar ul button {
+       border:none;
+       background-color: white;
+       color:red;
+       font-size: 20px;
+        }
+    
+    .navbar ul button:hover {
+            background-color: lightblue;
+            border-radius: 10px;
+            transition: 0.4s ease-in-out;
+    
+        }
+    
+    .navbar ul a{
+        text-decoration: none;
+        width:40px;
+        }
+    
+    .navbar ul li{
+      list-style: none;
+      padding:5px 5px;
+      background-color: white;
+      color:black;
+      font-size: 20px;
+      width:40px;
+     
+    
+        }
+    
+        .navbar ul li:hover{
+            background-color: lightblue;
+            border-radius: 10px;
+            transition: 0.5s ease-in-out;
+    
+        }
+        
+        
+        .logout {
+            width:27px;
+    
+        }
+    
+    
+    
+        @media screen and (max-width:450px){
+            .navbar {
+      
+                position: fixed;
+                 height: 50vh;
+                  width:6vw;
+                  padding:20px;
+                  padding-top: 50px;
+                 display: flex;
+                 justify-content: space-around;
+                 flex-direction: column;
+                 
+                 }
+    
+            .navbar span {
+                display:none;
+            }     
+    
+    
+        }
+    
+    
+    
+                /* post.php styling */
+    
+        .add-post {
+            outline: none;
+            text-align: center;
+            padding: 20px;
+        }
+    
+        .textAreaDiv {
+            padding-top:200px;
+        
+           }
+    
+       textarea{
+           border: none;
+        box-shadow: 1px 1px 3px 0px #888888;
+        
+           height:20vh; 
+           width:30vw;
+           resize: none;
+           outline: none;
+            
+       }
+    
+      
+     
+    
+       .add-post [type='submit'] {
+        background-color: white;
+        border: none;
+        color:blue;
+       font-size: 20px;
+    
     
        }
-
-   textarea{
-       border: none;
-    box-shadow: 1px 1px 3px 0px #888888;
     
-       height:20vh; 
-       width:30vw;
-       resize: none;
-       outline: none;
-        
-   }
-
-  
- 
-
-   .add-post [type='submit'] {
-    background-color: white;
-    border: none;
-    color:blue;
-   font-size: 20px;
-
-
-   }
-
-   .form-add-post [type='submit']:hover {
-        color:red;
-        transition: 0.3s ease-in-out;
-  }
-
-
-  @media screen and (max-width:450px){
-    .textAreaDiv {
-        padding-top:100px;
-        padding-left: 60px;
+       .form-add-post [type='submit']:hover {
+            color:red;
+            transition: 0.3s ease-in-out;
       }
     
-      textarea {
-        height:20vh; 
-        width:60vw;
-       }
-
-   }
-
-
-                
-   
-   
-   
-                /* posts.php  */
-  
-    /* this container starts in the navbar */
-  
-
-   .postsContainer {
-   display: inline-block;
-    padding-top: 20px;
-    width:50vw;
-     margin-left:0px; 
-     background-color: #F2F3F5; 
     
-    
-      
-}
-
-
-   .postsContainer .heading {
-    padding-left: 10vw ;
-    padding-bottom: 30px;
-   }
-
-   .containerDivs {
-       width:35vw;
-       height: fit-content;
-        min-height:200px;
-        box-shadow: 1px 1px 3px 0px #888888;
-        margin-left:2vw;
-        margin-bottom: 10px;
-        border-radius: 9px;
-        padding: 10px;
-        background-color: white;
-        font-size: 13px;
-
-
-   }
-
-.containerDivs:hover {
-    background-color: #F2F3F5; 
-    transition: 0.3s ease-in-out;
-}
-
-   .containerDivs h4 {
-    min-height:150px;
-    width:80%;
-    /* margin: auto; */
-    padding: 10px;
-    padding-bottom: 35px;
-    line-height: 19px;
-   
-    }
-
-
-
-   .btnsWrapper {
-     /* display:inline-block; */
-    width:fit-content;
-    float: right;
-
-   }
-   .btnsWrapper button {
-        display: inline-block; 
-    background:white;
-    color:blue;
-    border:none;
-
-   }
-   .btnsWrapper button:hover {
-    color:red;
-    transition: 0.3s ease-in-out;
-
-
-   }
-
-
-
-   @media screen and (max-width:450px){
-    
-    .postsContainer {
-        width:80vw;
-        margin-left:15vw;
-        background-color: white;   
-
+      @media screen and (max-width:450px){
+        .textAreaDiv {
+            padding-top:100px;
+            padding-left: 60px;
+          }
         
-       }
-
-       .containerDivs {
-        width:70vw;
-        height: fit-content;
-         /* border:1px solid  #282C35; */
-         box-shadow: 1px 1px 3px 0px #888888;
-         margin: auto;
-         margin-bottom: 8px;
-         border-radius: 9px;
-         padding: 10px;
-         background-color: white;
-         font-size: 13px;
- 
- 
-    }
-
-
-   }
-
-   .addedDiv {
-       display:inline-block;
-       vertical-align:top;
-       width:200px;
-       
-      
-   }
-
-
-
-
-                    /* edit the posts in posts.php */
-
-   .editAbsoluteDiv {
-       display: flex;
-      display: none;  
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    background-color:rgba(0,0,128,0.2) ;
-    height:100vh;
-    width:100vw;
-    z-index: 2;
-    top:0px; 
-    left:0px;
-}
-
-   .formToEdit {
-    border-radius: 6px;
-    padding : 20px;
-    background-color: white;
-    width:30vw;
-    height:15vh;
+          textarea {
+            height:20vh; 
+            width:60vw;
+           }
     
-
-   } 
-
-   .formToEdit  ion-icon{
-        display: block;
-        float: right;
-        font-size: 35px;
+       }
+    
+    
+                    
+       
+       
+       
+                    /* posts.php  */
       
-}
-
-.formToEdit  [type="text"]{
-    outline: none;
-    border:none;
-    height:85%;
-    width: 50%;
-    line-height: 20px;
-    font-family: sans-serif;
-    resize: none;
-}
-
-.formToEdit  [type="submit"]{
-  background-color: #4d4dff;
-  color:white;
-  border: none;
-  padding:8px;
-  margin-right: 8px;
-  
- 
-}
-
-
-
-
-
+        /* this container starts in the navbar */
+      
+    
+       .postsContainer {
+       display: inline-block;
+        padding-top: 20px;
+        width:50vw;
+         margin-left:0px; 
+         background-color: #F2F3F5; 
+        
+        
+          
+    }
+    
+    
+       .postsContainer .heading {
+        padding-left: 10vw ;
+        padding-bottom: 30px;
+       }
+    
+       .containerDivs {
+           width:35vw;
+           height: fit-content;
+            min-height:235px;
+            box-shadow: 1px 1px 3px 0px #888888;
+            margin-left:2vw;
+            margin-bottom: 10px;
+            border-radius: 9px;
+            padding: 10px;
+            background-color: white;
+            font-size: 13px;
+    
+    
+       }
+    
+    .containerDivs:hover {
+        background-color: #F2F3F5; 
+        transition: 0.3s ease-in-out;
+    }
+    
+       .containerDivs h4 {
+        min-height:150px;
+        width:80%;
+        /* margin: auto; */
+        padding: 10px;
+        padding-bottom: 35px;
+        line-height: 19px;
+       
+        }
+    
+    
+    
+       .btnsWrapper {
+         /* display:inline-block; */
+        width:fit-content;
+        float: right;
+    
+       }
+       .btnsWrapper button {
+            display: inline-block; 
+        background:white;
+        color:blue;
+        border:none;
+    
+       }
+       .btnsWrapper button:hover {
+        color:red;
+        transition: 0.3s ease-in-out;
+    
+    
+       }
+    
+    
+    
+       @media screen and (max-width:450px){
+        
+        .postsContainer {
+            width:80vw;
+            margin-left:15vw;
+            background-color: white;   
+    
+            
+           }
+    
+           .containerDivs {
+            width:70vw;
+            height: fit-content;
+             /* border:1px solid  #282C35; */
+             box-shadow: 1px 1px 3px 0px #888888;
+             margin: auto;
+             margin-bottom: 8px;
+             border-radius: 9px;
+             padding: 10px;
+             background-color: white;
+             font-size: 13px;
+     
+     
+        }
+    
+    
+       }
+    
+       .addedDiv {
+           display:inline-block;
+           vertical-align:top;
+           width:200px;
+           
+          
+       }
+    
+    
+    
+    
+                        /* edit the posts in posts.php */
+    
+       .editAbsoluteDiv {
+           display: flex;
+          display: none;  
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background-color:rgba(0,0,128,0.2) ;
+        height:100vh;
+        width:100vw;
+        z-index: 2;
+        top:0px; 
+        left:0px;
+    }
+    
+       .formToEdit {
+        border-radius: 6px;
+        padding : 20px;
+        background-color: white;
+        width:30vw;
+        height:15vh;
+        
+    
+       } 
+    
+       .formToEdit  ion-icon{
+            display: block;
+            float: right;
+            font-size: 35px;
+          
+    }
+    
+    .formToEdit  [type="text"]{
+        outline: none;
+        border:none;
+        height:85%;
+        width: 50%;
+        line-height: 20px;
+        font-family: sans-serif;
+        resize: none;
+    }
+    
+    .formToEdit  [type="submit"]{
+      background-color: #4d4dff;
+      color:white;
+      border: none;
+      padding:8px;
+      margin-right: 8px;
+      
+     
+    }
+    
+    
+    
+    
+    
+    
