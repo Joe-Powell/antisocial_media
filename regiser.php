@@ -2,35 +2,34 @@
 
 <?php
 
-// if(isset($_POST['signup-submit'])) {
-//     require "./config/db.php";
-//     $username = $_POST['username']; 
-//     $email = $_POST['email']; 
-//     $password = $_POST['pwd']; 
-//     $passwordRepeat = $_POST['pwd-repeat'];
+ if(isset($_POST['signup-submit'])) {
+    require "./config/db.php";
+    $username = $_POST['username']; 
+    $email = $_POST['email']; 
+    $password = $_POST['pwd'];     
+    $passwordRepeat = $_POST['pwd-repeat'];
 
-//     if ($password !== $passwordRepeat) {
-//       $message = "passwords don't match";
+    if ($password !== $passwordRepeat) {
+       $message = "passwords don't match";
 
-//     }else{
-//       $stmt = $pdo ->prepare( "SELECT username FROM users WHERE username=?");
-//         $stmt -> execute([$username]);
-//         $totalUsers = $stmt -> rowCount();
+     }else{
+       $stmt = $pdo ->prepare( "SELECT username FROM users WHERE username=?");
+         $stmt -> execute([$username]);        
+           $totalUsers = $stmt -> rowCount();
        
-//       if($totalUsers > 0) {
+      if($totalUsers > 0) {
        
-//       $emailTaken = 'Email already taken <br>';
-//     }else {
-//         $stmt = $pdo -> prepare('INSERT into users (username, email, password) VALUES(?, ?, ?)');
-//         $stmt -> execute([$username, $email, $password]);
-//         
+       $emailTaken = 'Email already taken <br>';
+     }else {
+         $stmt = $pdo -> prepare('INSERT into users (username, email, password) VALUES(?, ?, ?)');
+         $stmt -> execute([$username, $email, $password]);
+        
 
 
-//     }
+     }
+  }
 
-//  }
-
-// }
+ }
 
 
        
