@@ -2,6 +2,7 @@
     font-family: sans-serif;
     padding:0px;
     margin:0px;
+   
     
     }
     
@@ -20,6 +21,9 @@
     .login-status {
         padding:20px 20px;
     }
+    form {
+        display: block;
+    }
     
     .form-login {
         margin-top:40px;
@@ -29,6 +33,7 @@
     .form-login input{
         margin-right:20px;
         height:20px;
+        padding-bottom: 30px;
         outline: none;
         border:none;
         border-bottom: 1px solid #282C35;
@@ -235,7 +240,7 @@
        .containerDivs {
            width:35vw;
            height: fit-content;
-            min-height:235px;
+            min-height:180px;
             box-shadow: 1px 1px 3px 0px #888888;
             margin-left:2vw;
             margin-bottom: 10px;
@@ -253,11 +258,12 @@
     }
     
        .containerDivs h4 {
-        min-height:150px;
+           height:fit-content;
+        min-height:40px;
         width:80%;
         /* margin: auto; */
         padding: 10px;
-        padding-bottom: 35px;
+       
         line-height: 19px;
        
         }
@@ -271,10 +277,11 @@
     
        }
        .btnsWrapper button {
-            display: inline-block; 
-        background:white;
+        background:none;
+        padding-top:80px;
         color:blue;
         border:none;
+        outline: none;
     
        }
        .btnsWrapper button:hover {
@@ -287,6 +294,11 @@
     
     
        @media screen and (max-width:450px){
+
+        .containAll {
+            display: flex;
+            flex-direction: column;
+           }       
         
         .postsContainer {
             width:80vw;
@@ -342,41 +354,63 @@
     }
     
        .formToEdit {
-        border-radius: 6px;
-        padding : 20px;
-        background-color: white;
-        width:30vw;
-        height:15vh;
-        
+           position: relative;
+    border-radius: 6px;
+    padding : 20px;
+    text-align: center;
+    background-color: white;
+    width:60vw;
+    height:fit-content;
     
-       } 
-    
-       .formToEdit  ion-icon{
-            display: block;
-            float: right;
-            font-size: 35px;
-          
-    }
-    
-    .formToEdit  [type="text"]{
-        outline: none;
-        border:none;
-        height:85%;
-        width: 50%;
-        line-height: 20px;
-        font-family: sans-serif;
-        resize: none;
-    }
-    
-    .formToEdit  [type="submit"]{
-      background-color: #4d4dff;
-      color:white;
-      border: none;
-      padding:8px;
-      margin-right: 8px;
+
+   } 
+
+   .formToEdit  ion-icon{
+       position: absolute;
+        display: block;
+        float: right;
+        font-size: 30px;
+        top:0;
+        right:0;
+       
       
-     
-    }
+}
+
+.formToEdit  [type="text"]{
+    outline: none;
+    border:none;
+    box-shadow: 0px 0px 0px 0px blue;
+    height:fit-content;
+    min-height: 100px;
+    width: 90%;
+    margin-bottom: 8px;
+    line-height: 20px;
+    font-family: sans-serif;
+    resize: none;
+}
+
+.formToEdit  [type="submit"]{
+  background-color: #4d4dff;
+  color:white;
+  border: none;
+  padding:8px;
+  margin-right: 8px;
+  
+ 
+}
+
+
+/* when you click on the label it will trigger the file  */
+/* input[type='file'] {
+    display:none;
+} */
+
+.fileLabel {
+ background-color: blue;
+ color: white;
+
+}
+
     
     
     
