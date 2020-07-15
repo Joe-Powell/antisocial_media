@@ -83,8 +83,7 @@ if(isset($_SESSION['userId'])) {
 
 <?php foreach($posts as $post) { ?>
 
-<?php// echo 'session ' . $_SESSION['userId'];
-//echo 'inputId ' . $post->inputId;  ?>
+
 
 
 
@@ -92,6 +91,10 @@ if(isset($_SESSION['userId'])) {
     <h2><?php echo $post->author ?></h2>
     <h4><?php echo $post->body ?></h4>
 
+    <?php if($post->image) {
+      echo   "<img src='uploads/".$post->image."' height='100' width='100'>";  
+    }
+    ?>
 <?php
     if($_SESSION['userId'] == $post->inputId) { ?>
 
@@ -106,7 +109,9 @@ if(isset($_SESSION['userId'])) {
 
             <form class='formToEdit' action="posts.php" method="POST">
                 <ion-icon name="close-outline"></ion-icon>
-                <textarea name='the_body' type="text" value="<?php echo $post->body  ?>"  ><?php echo $post->body  ?></textarea>
+                <textarea name='the_body' type="text" value="<?php echo $post->body  ?>" ><?php echo $post->body  ?></textarea>
+                <!-- <input type='text' value="<?php // echo $post->image ?>" > -->
+
                 <input name='the_id' type="hidden" value="<?php echo $post->id  ?>">
 
                 <input name='submit' type="submit" value="Save Changes">
