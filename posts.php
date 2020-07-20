@@ -90,6 +90,9 @@ if(isset($_SESSION['userId'])) {
       
       ";  
     
+  }else{
+            echo   "<P>$post->body</p>";
+
   }
     
      
