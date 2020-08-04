@@ -22,7 +22,7 @@ echo ' <div class="contLogSignup">
                 <label for="unameEmail">Usrname/Email</label> 
                 <input required type="text" name="unameEmail" id="unameEmail" >
                 <label for="pwd">Password</label> 
-                <input required type="text" name="pwd" id="pwd"  >
+                <input required type="password" name="pwd" id="pwd"  >
                 <button type="submit" name="login-submit">Login</button>
                 <a class="signup" href="register.php">Signup</a>  
             </form>
