@@ -4,17 +4,7 @@
     margin:0px;
      }
 
-     body{
-        /* text-align: center;  */
-     }
-
-    
-
-     .containEditBtn {
-       
-     
-
-     }
+   
 
      #editProImgBtn {
          
@@ -50,10 +40,11 @@
     }
     
     .login-status {
-        padding:20px 20px;
+       padding:20px 20px;
     }
+
     form {
-        display: block;
+      display: block;
     }
     
     .form-login {
@@ -92,10 +83,7 @@
         height:fit-content;
         border-radius: 5px;
         background-color: orange;
-     
-
-         
-     }
+    }
 
     .form-signup input{
         margin:20px;
@@ -108,7 +96,7 @@
     }
 
     #submit_new_pro_pic {
-         display: none;  
+       display: none;  
     } 
     
  
@@ -138,25 +126,24 @@
     being in a container thats set to display flex flex-direction: row */
     .navbar ul {
         position: fixed; 
-       
         height:fit-content;
         display: flex;
         flex-direction: column;
-       justify-content: space-between; 
-       background-color: white;
+        justify-content: space-between; 
+        background-color: white;
 
        }
        
        
         
         .profileUploadLabel {
-        /*opacity:0;*/
-        /*transition: 0.7s ease-in-out;*/
-        background-color: blue;
-        color: white;
-        width:70%;
-        padding: 7px;
-        font-size: 10px;
+            /*opacity:0;*/
+            /*transition: 0.7s ease-in-out;*/
+            background-color: blue;
+            color: white;
+            width:70%;
+            padding: 7px;
+            font-size: 10px;
 
         }
 
@@ -313,6 +300,7 @@
        .containerDivs .postImg{
            width:100%;
        }
+
        .containerDivs h3{
            width:fit-content;
            display: inline-block;
@@ -342,19 +330,18 @@
     
        }
        .btnsWrapper button {
-        background:none;
-        vertical-align: bottom;
-        color:blue;
-        border:none;
-        outline: none;
-    
-       }
+            background:none;
+            vertical-align: bottom;
+            color:blue;
+            border:none;
+            outline: none;
+            }
+
+
        .btnsWrapper button:hover {
-        color:red;
-        transition: 0.3s ease-in-out;
-    
-    
-       }
+            color:red;
+            transition: 0.3s ease-in-out;
+        }
     
     
                                                     /*  450 and below */
@@ -416,16 +403,18 @@
             width:60vw;
            }
         
-          video, .postImgmg{
-       height:200px;
-       width:60vw; 
-       margin:10px auto;
-   }
+        video, .postImgmg{
+           height:200px;
+           width:60vw; 
+           margin:10px auto;
+           }
+           
 
         .containAll {
             display: flex;
             flex-direction: column;
-           }       
+           }  
+           
         
         .postsContainer {
             width:80vw;
@@ -436,25 +425,22 @@
            }
     
            .containerDivs {
-            width:70vw;
-            height: fit-content;
-             /* border:1px solid  #282C35; */
-             box-shadow: 1px 1px 3px 0px #888888;
-             margin: auto;
-             margin-bottom: 8px;
-             border-radius: 9px;
-             padding: 10px;
-             background-color: white;
-             font-size: 13px;
-     
-     
-        }
+                width:70vw;
+                height: fit-content;
+                 /* border:1px solid  #282C35; */
+                 box-shadow: 1px 1px 3px 0px #888888;
+                 margin: auto;
+                 margin-bottom: 8px;
+                 border-radius: 9px;
+                 padding: 10px;
+                 background-color: white;
+                 font-size: 13px;
+                }
 
         .imgProf {
-
             height:50px;
             width:50px;
-        }
+            }
     
     
        }
@@ -485,8 +471,8 @@
                         /* edit the posts in posts.php */
     
        .editAbsoluteDiv {
-           display: flex;
-          display: none;  
+        display: flex;
+        display: none;  
         justify-content: center;
         align-items: center;
         position: fixed;
@@ -499,16 +485,14 @@
     }
     
        .formToEdit {
-           position: relative;
-    border-radius: 6px;
-    padding : 20px;
-    text-align: center;
-    background-color: white;
-    width:60vw;
-    height:fit-content;
-    
-
-   } 
+            position: relative;
+            border-radius: 6px;
+            padding : 20px;
+            text-align: center;
+            background-color: white;
+            width:60vw;
+            height:fit-content;
+    } 
 
    .formToEdit  ion-icon{
        position: absolute;
@@ -544,11 +528,6 @@
  
 }
 
-
-/* when you click on the label it will trigger the file  */
-/* input[type='file'] {
-    display:none;
-} */
 
 .fileLabel {
  background-color: blue;
