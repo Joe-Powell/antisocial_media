@@ -23,7 +23,20 @@ if(isset($_POST['signup-submit'])) {
     }else {
         $stmt = $pdo -> prepare('INSERT into users (username, email, password) VALUES(?, ?, ?)');
         $stmt -> execute([$username, $email, $password]);
-        //header('Location: index.php');
+
+
+
+
+        $stmt = $pdo -> prepare("SELECT * FROM users WHERE username = ? ");
+        $stmt -> execute([$username]);
+        $profileimg = $stmt->fetch();
+        $userid = $profileimg->id;
+
+        $stmt = $pdo -> prepare("INSERT INTO profileimg(userid, status)       #so when you first sign up it pushes the id into profileimg's userid column
+            VALUES(?, ?)");
+          $stmt -> execute([$userid, 0]);
+ 
+ 
 
 
     }
@@ -47,7 +60,7 @@ if(isset($_POST['signup-submit'])) {
 <?php require "./includes/header.php";?>
 
 <div class=formContainer>
-<form class="form-signup" action="index.php" method="post"><br>
+<form class="form-signup" action="register.php" method="post"><br>
 
         <input required type="text" name="username" placeholder="username"><br>
 
