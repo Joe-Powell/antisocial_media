@@ -28,18 +28,30 @@ for (let i = 0; i < editBtn.length; i++) {
 }
 
 
-let file = document.getElementById('file');
-let spanCatchFile = document.querySelector('.spanCatchFile');
 
-file.addEventListener('change', function () {
-    if (file.value) {
-        spanCatchFile.innerHTML = file.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+
+/// for profile image
+
+
+let profileUploadLabel = document.getElementById('profileUploadLabel');
+let submit_new_pro_pic = document.getElementById('submit_new_pro_pic');
+
+
+
+
+profileUploadLabel.addEventListener('click', () => {
+
+    if (submit_new_pro_pic.style.display == 'block') {
+        submit_new_pro_pic.style.display = 'none';
+
     } else {
-        spanCatchFile.innerHTML = 'no file chosen';
+        submit_new_pro_pic.style.display = 'block';
     }
-
-
 })
+
+
+
+
 
 
 
