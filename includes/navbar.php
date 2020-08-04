@@ -1,7 +1,5 @@
 
-<?php 
-   // echo '<link rel="stylesheet" href="../style.css">'
-?>
+
 <div class="containAll">
 
 <nav class="navbar">
