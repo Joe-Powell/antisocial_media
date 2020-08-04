@@ -349,6 +349,7 @@
         .navbar {
       
             position: fixed;
+            z-index: 3;
              height: 85px;
              width:100vw;
              padding:0px;
