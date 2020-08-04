@@ -5,8 +5,27 @@
      }
 
      body{
-        text-align: center; 
+        /* text-align: center;  */
      }
+
+    
+
+     .containEditBtn {
+       
+     
+
+     }
+
+     #editProImgBtn {
+         
+        padding:5px;
+        height:25px;
+       width:fit-content;
+        border: none;
+        background-color: rgba(0,128,128, 0.4);
+        border: black solid 1px;
+        }
+     
     
     .contLogSignup {
         text-align: center;
@@ -46,7 +65,9 @@
 
     label {
         float: left;
-        margin-left: 18px;
+        margin-left: 0px;
+        margin-right: 15px;
+        margin-bottom: 5px;
         color:white;
     }
     
@@ -68,11 +89,10 @@
 
     button[type='submit']{
         width:90%;
-        height:50px;
+        height:fit-content;
         border-radius: 5px;
         background-color: orange;
-        margin-top: 15px;
-        margin-bottom: 15px;
+     
 
          
      }
@@ -86,6 +106,10 @@
         background-color: white;
     
     }
+
+    #submit_new_pro_pic {
+         display: none;  
+    } 
     
  
     
@@ -98,11 +122,13 @@
      }                            
     
     .navbar {
-        height: 50vh;
+       
+        top: 0px;
+        
         width:6vw;
         width: 150px;
         padding:30px;
-        padding-top: 80px;
+       
         display: inline-block;
       
     }
@@ -112,13 +138,28 @@
     being in a container thats set to display flex flex-direction: row */
     .navbar ul {
         position: fixed; 
-        height:50vh;
+       
+        height:fit-content;
         display: flex;
         flex-direction: column;
-       justify-content: space-evenly; 
+       justify-content: space-between; 
+       background-color: white;
+
+       }
        
-    
+       
+        
+        .profileUploadLabel {
+        /*opacity:0;*/
+        /*transition: 0.7s ease-in-out;*/
+        background-color: blue;
+        color: white;
+        width:70%;
+        padding: 7px;
+        font-size: 10px;
+
         }
+
     
     
     .navbar ul button {
@@ -128,16 +169,11 @@
        font-size: 20px;
         }
     
-    .navbar ul button:hover {
-            background-color: lightblue;
-            border-radius: 10px;
-            transition: 0.4s ease-in-out;
-    
-        }
+   
     
     .navbar ul a{
         text-decoration: none;
-        width:30px;
+        width:fit-content;
         }
     
     .navbar ul li{
@@ -146,7 +182,7 @@
       background-color: white;
       color:black;
       font-size: 20px;
-      width:30px;
+      width:fit-content;
      
     
         }
@@ -154,6 +190,7 @@
         .navbar ul li:hover{
             background-color: lightblue;
             border-radius: 10px;
+            padding: 3px;
             transition: 0.5s ease-in-out;
     
         }
@@ -165,27 +202,7 @@
         }
     
     
-    
-        @media screen and (max-width:450px){
-            .navbar {
-      
-                position: fixed;
-                 height: 50vh;
-                  width:6vw;
-                  padding:20px;
-                  padding-top: 50px;
-                 display: flex;
-                 justify-content: space-around;
-                 flex-direction: column;
-                 
-                 }
-    
-            .navbar span {
-                display:none;
-            }     
-    
-    
-        }
+
     
     
     
@@ -198,7 +215,7 @@
         }
     
         .textAreaDiv {
-            padding-top:200px;
+         
         
            }
     
@@ -231,19 +248,6 @@
       }
     
     
-      @media screen and (max-width:450px){
-        .textAreaDiv {
-            padding-top:100px;
-            padding-left: 60px;
-          }
-        
-          textarea {
-            height:20vh; 
-            width:60vw;
-           }
-    
-       }
-    
     
                     
        
@@ -251,7 +255,7 @@
        
                     /* posts.php  */
       
-        /* this container starts in the navbar */
+      
       
     
        .postsContainer {
@@ -259,7 +263,6 @@
         padding-top: 20px;
         width:50vw;
          margin-left:0px; 
-         background-color: #F2F3F5; 
         
         
           
@@ -285,23 +288,51 @@
     
     
        }
+
+       .imgProf {
+        border-radius: 100%;
+        margin-right: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+
+
+     }
+
+       video {
+        width: 100%;
+        margin: auto;
+        outline: none;
+       
+        }
+
+        controls{
+            position:absolute;
+            z-index:1;
+        }
+
+       .containerDivs .postImg{
+           width:100%;
+       }
+       .containerDivs h3{
+           width:fit-content;
+           display: inline-block;
+           vertical-align: top;
+       }
+
+       .containerDivs p {
+        width:90%;
+
+
+       }
+    
     
     .containerDivs:hover {
         background-color: #F2F3F5; 
         transition: 0.3s ease-in-out;
     }
     
-       .containerDivs h4 {
-           height:fit-content;
-        min-height:40px;
-        width:80%;
-        /* margin: auto; */
-        padding: 10px;
-       
-        line-height: 19px;
-       
-        }
-    
+
+      
     
     
        .btnsWrapper {
@@ -312,7 +343,7 @@
        }
        .btnsWrapper button {
         background:none;
-        padding-top:80px;
+        vertical-align: bottom;
         color:blue;
         border:none;
         outline: none;
@@ -326,8 +357,70 @@
        }
     
     
-    
+                                                    /*  450 and below */
        @media screen and (max-width:450px){
+        .navbar {
+      
+            position: fixed;
+             height: 85px;
+             width:100vw;
+             padding:0px;
+            
+            
+             
+             }
+
+             
+            
+            .navbar ul {
+                box-sizing: border-box;
+                position: absolute; 
+                z-index: 3;
+                top:0;
+                width:90vw;
+                height:85px;
+                padding:20px;
+                display: flex;
+                flex-direction: row;
+                
+               
+            
+                }
+            .profileUploadForm {
+               
+            }    
+
+        .navbar ul li {
+            font-size: 10px;
+        } 
+        
+         .navbar ul button {
+            font-size: 10px;
+
+             
+             
+         }
+        
+        .postsContainer {
+            
+
+        }
+        
+        .textAreaDiv {
+            padding-top:100px;
+            padding-left: 60px;
+          }
+        
+          textarea {
+            height:20vh; 
+            width:60vw;
+           }
+        
+          video, .postImgmg{
+       height:200px;
+       width:60vw; 
+       margin:10px auto;
+   }
 
         .containAll {
             display: flex;
@@ -356,9 +449,27 @@
      
      
         }
+
+        .imgProf {
+
+            height:50px;
+            width:50px;
+        }
     
     
        }
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
     
        .addedDiv {
            display:inline-block;
@@ -444,6 +555,7 @@
  color: white;
 
 }
+
 
     
     
