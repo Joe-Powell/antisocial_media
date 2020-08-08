@@ -54,13 +54,25 @@ if(isset($_POST['signup-submit'])) {
 ?>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+<h3 class="login-status">Please log in or sign up &#x1F642;</h3>
 
 
 
-<?php require "./includes/header.php";?>
+
 
 <div class=formContainer>
-<form class="form-signup" action="register.php" method="post"><br>
+  <form class="form-signup" action="register.php" method="post"><br>
 
         <input required type="text" name="username" placeholder="username"><br>
 
@@ -79,7 +91,7 @@ if(isset($_POST['signup-submit'])) {
           <?php if(isset($successMessage)){  ?> 
           <h3><?php echo $successMessage ?></h3>
           <?php } ?>    
-        </form>
+  </form>
 </div>
        
 
