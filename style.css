@@ -31,16 +31,23 @@
     }
     
     
-    .signup {
+    .form-signup {
+        text-align: center;
+     
+        margin: auto;
         text-decoration: none;
         font-weight: 900;
         font-size: 25px;
-        color:black
+        width:280px;
+        color:black ;
+        background-color: blue;
+        border:1px solid blue;
         
     }
     
     .login-status {
        padding:20px 20px;
+       text-align:center;
     }
 
     form {
