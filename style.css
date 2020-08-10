@@ -99,7 +99,7 @@
 
     button[type='submit']{
         width:90%;
-        height: 50px;
+        height: fit-content;
         margin: auto;
         border-radius: 5px;
         background-color: orange;
@@ -259,7 +259,7 @@
     
        .postsContainer {
        display: inline-block;
-        padding-top: 20px;
+        padding-top: 150px;
         width:50vw;
          margin-left:0px; 
         
@@ -377,7 +377,7 @@
                 position: absolute; 
                 z-index: 3;
                 top:0;
-                width:90vw;
+                width:100vw;
                 height:85px;
                 padding:20px;
                 display: flex;
@@ -539,6 +539,16 @@
   margin-right: 8px;
   
  
+}
+
+.formToEdit .deleteBtn {
+
+background-color: red;
+  color:white;
+  width: 85px;
+
+
+
 }
 
 
