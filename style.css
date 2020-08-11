@@ -63,9 +63,7 @@
        text-align:center;
     }
 
-    form {
-      display: block;
-    }
+  
     
     .form-login {
         /* display: flex;
@@ -97,9 +95,9 @@
     
     }
 
-    button[type='submit']{
+    .form-login button[type='submit']{
         width:90%;
-        height: fit-content;
+        height: 50px;
         margin: auto;
         border-radius: 5px;
         background-color: orange;
@@ -110,6 +108,12 @@
     #submit_new_pro_pic {
        display: none;  
     } 
+
+    .ionForProPic {
+
+
+
+    }
     
  
     
@@ -149,15 +153,18 @@
        
         
         .profileUploadLabel {
-            /*opacity:0;*/
-            /*transition: 0.7s ease-in-out;*/
+           
             background-color: blue;
             color: white;
-            width:70%;
+            width:70px;
             padding: 7px;
             font-size: 10px;
 
         }
+
+        .profileUploadForm {
+            display: none;
+         }    
 
     
     
@@ -165,7 +172,7 @@
        border:none;
        background-color: white;
        color:red;
-       font-size: 20px;
+       font-size: 30px;
         }
     
    
@@ -180,7 +187,7 @@
       padding:5px 0px;
       background-color: white;
       color:black;
-      font-size: 20px;
+      font-size: 30px;
       width:fit-content;
      
     
@@ -383,19 +390,17 @@
                 display: flex;
                 flex-direction: row;
                 
-               
-            
-                }
-            .profileUploadForm {
-               
-            }    
+               }
+
+
+          
 
         .navbar ul li {
-            font-size: 10px;
+            font-size: 20px;
         } 
         
          .navbar ul button {
-            font-size: 10px;
+            font-size: 20px;
 
              
              
