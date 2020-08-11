@@ -37,6 +37,9 @@ let profileUploadLabel = document.getElementById('profileUploadLabel');
 let submit_new_pro_pic = document.getElementById('submit_new_pro_pic');
 
 
+let imgProf = document.querySelector('.imgProf');
+let profileUploadForm = document.querySelector('.profileUploadForm');
+
 
 
 profileUploadLabel.addEventListener('click', () => {
@@ -47,6 +50,22 @@ profileUploadLabel.addEventListener('click', () => {
     } else {
         submit_new_pro_pic.style.display = 'block';
     }
+})
+
+
+
+
+// when click on profile picture
+imgProf.addEventListener('click', () => {
+    if (profileUploadForm.style.display == 'block') {
+        profileUploadForm.style.display = 'none';
+
+    } else {
+        profileUploadForm.style.display = 'block';
+    }
+
+
+
 })
 
 
