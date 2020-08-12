@@ -13,6 +13,9 @@ or else the count will be  off as well */
 for (let i = 0; i < editBtn.length; i++) {
     editBtn[i].addEventListener('click', () => {
         editAbsoluteDiv[i].style.display = 'flex';
+        
+        const editTextarea = document.querySelector('.editAbsoluteDiv textarea');
+        editTextarea.focus();
 
 
 
