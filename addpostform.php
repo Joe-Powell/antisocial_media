@@ -13,7 +13,7 @@
 
        <div class='textAreaDiv'>
             <h2>Add a new post here</h2>
-            <textarea name="body" type='text' > 
+            <textarea name="body" type='text' autofocus> 
             </textarea><br>
             <input type='file' name='file' id='file' hidden="hidden"  >
             <label for="file" class='fileLabel'>Upload Picture</label> 
