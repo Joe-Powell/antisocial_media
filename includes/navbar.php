@@ -48,7 +48,7 @@
             
         <a href="index.php"><li> Profile</li></a>
         <a href="posts.php"><li> Newsfeed</li></a>
-        <a href="post.php"><li> Post</li></a>
+        <a href="post.php"><li> Add Post</li></a>
 
     <?php  if(isset($_SESSION['userId'])){ ?>
         
