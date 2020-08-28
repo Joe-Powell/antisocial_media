@@ -13,6 +13,9 @@ or else the count will be  off as well */
 for (let i = 0; i < editBtn.length; i++) {
     editBtn[i].addEventListener('click', () => {
         editAbsoluteDiv[i].style.display = 'flex';
+        
+        const editTextarea = document.querySelector('.editAbsoluteDiv textarea');
+        editTextarea.focus();
 
 
 
@@ -28,18 +31,49 @@ for (let i = 0; i < editBtn.length; i++) {
 }
 
 
-let file = document.getElementById('file');
-let spanCatchFile = document.querySelector('.spanCatchFile');
 
-file.addEventListener('change', function () {
-    if (file.value) {
-        spanCatchFile.innerHTML = file.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+
+/// for profile image
+
+
+let profileUploadLabel = document.getElementById('profileUploadLabel');
+let submit_new_pro_pic = document.getElementById('submit_new_pro_pic');
+
+
+let imgProf = document.querySelector('.imgProf');
+let profileUploadForm = document.querySelector('.profileUploadForm');
+
+
+
+profileUploadLabel.addEventListener('click', () => {
+
+    if (submit_new_pro_pic.style.display == 'block') {
+        submit_new_pro_pic.style.display = 'none';
+
     } else {
-        spanCatchFile.innerHTML = 'no file chosen';
+        submit_new_pro_pic.style.display = 'block';
+    }
+})
+
+
+
+
+// when click on profile picture
+imgProf.addEventListener('click', () => {
+    if (profileUploadForm.style.display == 'block') {
+        profileUploadForm.style.display = 'none';
+
+    } else {
+        profileUploadForm.style.display = 'block';
     }
 
 
+
 })
+
+
+
+
 
 
 
