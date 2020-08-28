@@ -1,5 +1,10 @@
-<?php session_start(); ?>
-<?php require "./includes/header.php";?>
+<?php session_start(); 
+    require "./config/db.php";
+    require "./includes/header.php";
+
+
+
+?>
 
 
 
@@ -11,12 +16,6 @@ if(isset($_POST['delete'])) {
     $the_id = $_POST['the_id'];
     $stmt = $pdo->prepare("DELETE FROM posts Where id = ? ");  
     $stmt->execute([$the_id]);
-    
-    // by putting the delete above the stmt execute I am able to get the delete the first time otherwise have to refresh twice for results
-    // or even have this code below it for the first refresh to work or submission.. not sureif this is only with PDO or not...
-    // $stmt = $pdo->prepare("SELECT * FROM posts ORDER BY id DESC ");
-    //$stmt->execute();
-    //$posts = $stmt->fetchAll();
   
     }
   
@@ -40,38 +39,88 @@ if(isset($_SESSION['userId'])) {
     $stmt = $pdo->prepare("SELECT * FROM posts ORDER BY id DESC ");
     $stmt->execute();
     $posts = $stmt->fetchAll();
+
+
+
+
     
 }else {
-   // for offline users
-    require "./config/db.php";
-    $stmt = $pdo->prepare("SELECT * FROM posts ORDER BY id DESC ");
-    $stmt->execute();
-    $posts = $stmt->fetchAll();
-   
-    
+  header('Location: index.php');
 }
-
 
 ?>
 
 
 
 <div class="postsContainer">
-<h2 class='heading'>Posts Below</h2>
+
 
 <?php foreach($posts as $post) { ?>
 
 <div class='containerDivs'>
-    <h2><?php echo $post->author ?></h2><br>
     
 
 
-    <?php    
-    if($post->video && $post->image !== '.') {
-      echo   "<P>$post->body</p>
-      <img src='uploads/".$post->image."' width='300' height='210'>
+    
+<!-- This will give the Profile picture for every post -->
+    <img class='imgProf' src='<?php
+        $stmt = $pdo -> prepare("SELECT * FROM profileimg WHERE userid = ? ");
+     $stmt -> execute([$post->inputId]);
+     $profimg = $stmt->fetch();
+     if($profimg) {
+   
+        if($profimg->status == 0) {
+            echo 'uploads/profileDefault.png' ;
+        }
+    
+        else if($profimg->status == 1){
+            echo 'uploads/profile'.$profimg->userid.'.'.$profimg->ext ;
 
-      <video width='300' height='210' controls>
+        }
+    
+      }
+      
+     else{
+        echo 'uploads/profileDefault.png' ;
+    }
+    
+    
+    
+    
+        
+    ?>'  height='60' width='60' >
+
+
+        <?php   
+        echo "<form method='post' action='index.php?user=".$profimg->userid."' >
+                <input type='submit' value='see profile'>
+                </form>
+        
+        ";
+        ?>
+
+
+<h3><?php echo $post->author ?></h3>
+
+<?php if($_SESSION['userId'] == $post->inputId) { ?>
+        <div class="btnsWrapper">
+            <button  class='editBtn'>Edit</button>
+        </div>
+
+<?php }  ?>
+      
+
+
+
+
+
+
+
+    <?php    
+    if($post->video  && $post->image ) {
+      echo   "<P>$post->body</p>
+      <img class='postImg' src='uploads/".$post->image."' >
+      <video width='300' height='210' controls='controls'>
       <source src='uploadVideos/".$post->video."' type='video/mp4'>
       </video>
       ";  
@@ -79,21 +128,21 @@ if(isset($_SESSION['userId'])) {
   }
     elseif($post->video ) {
         echo   "<P>$post->body</p>
-        <video width='300' height='210' controls>
+        <video width='300' height='210' controls='controls'>
         <source src='uploadVideos/".$post->video."' type='video/mp4'>
         </video>";  
       
     }
-    elseif($post->image !== '.') {
+    elseif($post->image ) {
       echo   "<P>$post->body</p>
-      <img src='uploads/".$post->image."' height='100' width='100'>
+      <img class='postImg' src='uploads/".$post->image."'>
       
       ";  
     
   }else{
-            echo   "<P>$post->body</p>";
+    echo   "<P>$post->body</p>";
 
-  }
+}
     
      
 
@@ -106,12 +155,7 @@ if(isset($_SESSION['userId'])) {
 
 
     <?php if($_SESSION['userId'] == $post->inputId) { ?>
-        <div class="btnsWrapper">
-            <button type='submit' class='editBtn'>Edit</button>
-        </div>
-            
-            
-
+        
     <div class="editAbsoluteDiv">
         <form class='formToEdit' action="posts.php" method="POST">
             <ion-icon name="close-outline"></ion-icon>
@@ -135,6 +179,6 @@ if(isset($_SESSION['userId'])) {
 
 
 </div>
-</div>
+
 
 <?php require "./includes/footer.php";?>
