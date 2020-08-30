@@ -17,9 +17,6 @@ for (let i = 0; i < editBtn.length; i++) {
         const editTextarea = document.querySelector('.editAbsoluteDiv textarea');
         editTextarea.focus();
 
-        const editTextarea = document.querySelector('.editAbsoluteDiv textarea');
-        editTextarea.focus();
-
 
         ionIcon[i].addEventListener('click', () => {
             editAbsoluteDiv[i].style.display = 'none';
