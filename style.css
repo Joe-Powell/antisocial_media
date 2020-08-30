@@ -36,7 +36,11 @@
         display: flex;
         flex-direction: column;
         margin: auto;
+<<<<<<< HEAD
         padding:30px 10px;
+=======
+        padding:10px;
+>>>>>>> 644c9eca4e8866772f403d82e91d6fb98be9c4fd
 
         text-decoration: none;
         font-weight: 900;
@@ -57,6 +61,7 @@
 
 
     }
+<<<<<<< HEAD
 
      .form-login a{
     text-decoration: none;
@@ -66,6 +71,8 @@
     border-radius: 5px;
     color:black;
     font-weight: 700;
+=======
+>>>>>>> 644c9eca4e8866772f403d82e91d6fb98be9c4fd
     
         }
 
@@ -116,6 +123,7 @@
         background-color: orange;
     }
 
+<<<<<<< HEAD
     .submitRegistration {
         width:90%;
         height: 50px;
@@ -126,6 +134,9 @@
         font-weight: 700;
 
     }
+=======
+   
+>>>>>>> 644c9eca4e8866772f403d82e91d6fb98be9c4fd
 
    
 
@@ -185,7 +196,11 @@
        
         
         .profileUploadLabel {
+<<<<<<< HEAD
            /* HIDDEN */
+=======
+           
+>>>>>>> 644c9eca4e8866772f403d82e91d6fb98be9c4fd
             background-color: blue;
             color: white;
             width:70px;
@@ -196,7 +211,10 @@
 
         .profileUploadForm {
             display: none;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 644c9eca4e8866772f403d82e91d6fb98be9c4fd
          }    
 
     
@@ -205,7 +223,10 @@
        border:none;
        background-color: white;
        color:red;
+<<<<<<< HEAD
        padding:10px;
+=======
+>>>>>>> 644c9eca4e8866772f403d82e91d6fb98be9c4fd
        font-size: 30px;
         }
     
@@ -523,7 +544,10 @@ background-color: red;
 
         .navbar ul li {
             font-size: 20px;
+<<<<<<< HEAD
             display: inline-block;
+=======
+>>>>>>> 644c9eca4e8866772f403d82e91d6fb98be9c4fd
         } 
         
          .navbar ul button {
@@ -620,7 +644,86 @@ background-color: red;
     
     
     
+<<<<<<< HEAD
         
+=======
+                        /* edit the posts in posts.php */
+    
+       .editAbsoluteDiv {
+        display: flex;
+        display: none;  
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background-color:rgba(0,0,128,0.2) ;
+        height:100vh;
+        width:100vw;
+        z-index: 2;
+        top:0px; 
+        left:0px;
+    }
+    
+       .formToEdit {
+            position: relative;
+            border-radius: 6px;
+            padding : 20px;
+            text-align: center;
+            background-color: white;
+            width:60vw;
+            height:fit-content;
+    } 
+
+   .formToEdit  ion-icon{
+       position: absolute;
+        display: block;
+        float: right;
+        font-size: 30px;
+        top:0;
+        right:0;
+       
+      
+}
+
+.formToEdit  [type="text"]{
+    outline: none;
+    border:none;
+    box-shadow: 0px 0px 0px 0px blue;
+    height:fit-content;
+    min-height: 100px;
+    width: 90%;
+    margin-bottom: 8px;
+    line-height: 20px;
+    font-family: sans-serif;
+    resize: none;
+}
+
+.formToEdit  [type="submit"]{
+  background-color: #4d4dff;
+  color:white;
+  border: none;
+  padding:8px;
+  margin-right: 8px;
+  
+ 
+}
+
+.formToEdit .deleteBtn {
+
+background-color: red;
+  color:white;
+  width: 85px;
+
+
+
+}
+
+
+.fileLabel {
+ background-color: blue;
+ color: white;
+
+}
+>>>>>>> 644c9eca4e8866772f403d82e91d6fb98be9c4fd
 
 
     

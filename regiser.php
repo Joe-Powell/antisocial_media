@@ -66,10 +66,17 @@ if(isset($_POST['signup-submit'])) {
 <body>
 
 <h3 class="login-status">Please log in or sign up &#x1F642;</h3>
+<<<<<<< HEAD
 
 
 
  
+=======
+
+
+
+
+>>>>>>> 644c9eca4e8866772f403d82e91d6fb98be9c4fd
 
 <div class=formContainer>
   <form class="form-signup" action="register.php" method="post"><br>
