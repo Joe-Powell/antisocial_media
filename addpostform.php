@@ -12,7 +12,7 @@
 
 
        <div class='textAreaDiv'>
-            <h2>Add a new post here</h2>
+            <h2>Add Post Here</h2>
             <textarea name="body" type='text' autofocus > 
             </textarea><br>
             <input type='file' name='file' id='file' hidden="hidden"  >
