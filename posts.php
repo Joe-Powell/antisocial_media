@@ -92,6 +92,8 @@ if(isset($_SESSION['userId'])) {
 
 
         <?php   
+
+        // to see the profile
         echo "<form method='post' action='index.php?user=".$profimg->userid."' >
                 <input type='submit' value='see profile'>
                 </form>

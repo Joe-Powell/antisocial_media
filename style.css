@@ -196,6 +196,7 @@
 
         .profileUploadForm {
             display: none;
+
          }    
 
     
@@ -204,7 +205,6 @@
        border:none;
        background-color: white;
        color:red;
-       padding:10px;
        font-size: 30px;
         }
     
@@ -217,30 +217,21 @@
     
     .navbar ul li{
       list-style: none;
-      padding:10px;
+      padding:5px 0px;
       background-color: white;
       color:black;
       font-size: 30px;
       width:fit-content;
-      transition: 0.9s ease-in-out;
+     
     
         }
     
         .navbar ul li:hover{
             background-color: lightblue;
             border-radius: 10px;
-            
-
-           
-    
-        }
-
-        .navbar ul button:hover {
-            background-color: lightblue;
-            border-radius: 10px;
-           
+            padding: 3px;
             transition: 0.5s ease-in-out;
-
+    
         }
         
         
