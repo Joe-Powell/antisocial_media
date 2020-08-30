@@ -18,6 +18,7 @@ for (let i = 0; i < editBtn.length; i++) {
         editTextarea.focus();
 
 
+
         ionIcon[i].addEventListener('click', () => {
             editAbsoluteDiv[i].style.display = 'none';
 
@@ -71,11 +72,6 @@ imgProf.addEventListener('click', () => {
 
 
 })
-
-
-
-
-
 
 
 

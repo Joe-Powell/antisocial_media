@@ -16,6 +16,12 @@ if(isset($_POST['delete'])) {
     $the_id = $_POST['the_id'];
     $stmt = $pdo->prepare("DELETE FROM posts Where id = ? ");  
     $stmt->execute([$the_id]);
+    
+    // by putting the delete above the stmt execute I am able to get the delete the first time otherwise have to refresh twice for results
+    // or even have this code below it for the first refresh to work or submission.. not sureif this is only with PDO or not...
+    // $stmt = $pdo->prepare("SELECT * FROM posts ORDER BY id DESC ");
+    //$stmt->execute();
+    //$posts = $stmt->fetchAll();
   
     }
   
@@ -74,6 +80,7 @@ if(isset($_SESSION['userId'])) {
         }
     
         else if($profimg->status == 1){
+            //"<img src='uploads/profile".$profimg->userid.".".$profimg->ext." ' height='50' width='50'>";
             echo 'uploads/profile'.$profimg->userid.'.'.$profimg->ext ;
 
         }
@@ -91,9 +98,10 @@ if(isset($_SESSION['userId'])) {
     ?>'  height='60' width='60' >
 
 
-        <?php   
-
-        // to see the profile
+        <?php    //////anchor tag takes you to profile of user
+        // $stmt = $pdo -> prepare("SELECT * FROM profileimg WHERE userid = ? ");
+        // $stmt -> execute([$post->inputId]);
+        // $profimg = $stmt->fetch();
         echo "<form method='post' action='index.php?user=".$profimg->userid."' >
                 <input type='submit' value='see profile'>
                 </form>
@@ -161,7 +169,7 @@ if(isset($_SESSION['userId'])) {
     <div class="editAbsoluteDiv">
         <form class='formToEdit' action="posts.php" method="POST">
             <ion-icon name="close-outline"></ion-icon>
-            <textarea name='the_body' type="text"   value="<?php echo $post->body ?>"  ><?php echo $post->body  ?></textarea>
+            <textarea name='the_body' type="text" value="<?php echo $post->body  ?>" ><?php echo $post->body  ?></textarea>
             <!-- <input type='text' value="<?php // echo $post->image ?>" > -->
             <input name='the_id' type="hidden" value="<?php echo $post->id  ?>">
             <input name='submit' type="submit" value="Save Changes">

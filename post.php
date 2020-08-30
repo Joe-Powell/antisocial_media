@@ -19,9 +19,18 @@ if(isset($_POST['submit'])) {
         $fileType = $file['type'];
         $fileTmpName = $file['tmp_name'];
         $fileError= $file['error'];
-        //print_r($fileTmpName);
+      
+        print_r($fileTmpName);
+      
+
         $fileDestination = 'uploads/'.$fileName;
+
+      
+
         move_uploaded_file($fileTmpName, $fileDestination);
+
+        
+
         $body = $_POST['body'];
         $author = $_POST['author'];
         $inputId = $_POST['inputId'];
@@ -38,9 +47,12 @@ if(isset($_POST['submit'])) {
             $fileErrors = $files['error'];
             $fileTypes = $files['type'];
             $fileTmpNames = $files['tmp_name'];
+          
             $fileSizes = $files['size'];
+                
+            
             $fileDestinations = 'uploadVideos/'.$fileNames;
-            move_uploaded_file($fileTmpNames, $fileDestinations);
+                move_uploaded_file($fileTmpNames, $fileDestinations);
     
             
         }   

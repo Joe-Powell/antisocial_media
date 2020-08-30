@@ -1,6 +1,6 @@
 <?php session_start();
         require "./config/db.php";
-        /// chage in master
+
 
         ///// upload new profile picture
 
