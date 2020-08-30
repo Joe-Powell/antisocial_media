@@ -23,7 +23,20 @@ if(isset($_POST['signup-submit'])) {
     }else {
         $stmt = $pdo -> prepare('INSERT into users (username, email, password) VALUES(?, ?, ?)');
         $stmt -> execute([$username, $email, $password]);
-        //header('Location: index.php');
+
+
+
+
+        $stmt = $pdo -> prepare("SELECT * FROM users WHERE username = ? ");
+        $stmt -> execute([$username]);
+        $profileimg = $stmt->fetch();
+        $userid = $profileimg->id;
+
+        $stmt = $pdo -> prepare("INSERT INTO profileimg(userid, status)       #so when you first sign up it pushes the id into profileimg's userid column
+            VALUES(?, ?)");
+          $stmt -> execute([$userid, 0]);
+ 
+ 
 
 
     }
@@ -41,13 +54,25 @@ if(isset($_POST['signup-submit'])) {
 ?>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+<h3 class="login-status">Please log in or sign up &#x1F642;</h3>
 
 
 
-<?php require "./includes/header.php";?>
+ 
 
 <div class=formContainer>
-<form class="form-signup" action="index.php" method="post"><br>
+  <form class="form-signup" action="register.php" method="post"><br>
 
         <input required type="text" name="username" placeholder="username"><br>
 
@@ -57,7 +82,7 @@ if(isset($_POST['signup-submit'])) {
 
         <input required type="password" name="pwd-repeat" placeholder="Confirm Password"><br>
 
-        <button required type="submit" name="signup-submit">Submit</button>
+        <button class='submitRegistration' required type="submit" name="signup-submit">Submit</button>
 
           <?php if(isset($message)){  ?> 
           <h3><?php echo $message ?></h3>
@@ -66,7 +91,7 @@ if(isset($_POST['signup-submit'])) {
           <?php if(isset($successMessage)){  ?> 
           <h3><?php echo $successMessage ?></h3>
           <?php } ?>    
-        </form>
+  </form>
 </div>
        
 

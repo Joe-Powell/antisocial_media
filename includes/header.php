@@ -15,16 +15,33 @@
         include "navbar.php";
 
     }else{
-       
-echo ' <div class="contLogSignup"> <form class="form-login" action="index.php" method="post">
-                <input required type="text" name="unameEmail" id="" placeholder="Username/E-mail....">
-                <input required type="password" name="pwd" id="password" >
+        echo '<h3 class="login-status">Please log in or sign up &#x1F642;</h3>';
+
+echo ' <div class="contLogSignup"> 
+            <form class="form-login" action="index.php" method="post">
+                <label for="unameEmail">Username/Email</label> 
+                <input required type="text" name="unameEmail" id="unameEmail" >
+                <label for="pwd">Password</label> 
+                <input required type="password" name="pwd" id="pwd"  >
                 <button type="submit" name="login-submit">Login</button>
+                <a class="signup" href="register.php">Signup</a>  
             </form>
         
-    <a class="signup" href="register.php">Signup</a> </div>';
+      
+    </div>';
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 ?>

@@ -33,26 +33,50 @@
     
     .form-signup {
         text-align: center;
-     
+        display: flex;
+        flex-direction: column;
         margin: auto;
+        padding:30px 10px;
+
         text-decoration: none;
         font-weight: 900;
         font-size: 25px;
-        width:280px;
+        width:380px;
         color:black ;
         background-color: blue;
         border:1px solid blue;
         
     }
+
+    .form-signup input {
+        width:90%;
+        color: black;
+        height:40px;
+        margin:10px auto;
+        padding-left:10px;
+
+
+    }
+
+     .form-login a{
+    text-decoration: none;
+    width:490px;
+    height: 50px;
+    margin:10px auto;
+    border-radius: 5px;
+    color:black;
+    font-weight: 700;
     
+        }
+
+
+
     .login-status {
        padding:20px 20px;
        text-align:center;
     }
 
-    form {
-      display: block;
-    }
+  
     
     .form-login {
         /* display: flex;
@@ -79,13 +103,12 @@
         outline: none;
         border:none;
          border-radius: 5px;
-         /* background-color: orange; */
 
        
     
     }
 
-    button[type='submit']{
+    .form-login button[type='submit']{
         width:90%;
         height: 50px;
         margin: auto;
@@ -93,19 +116,36 @@
         background-color: orange;
     }
 
-    .form-signup input{
-        margin:20px;
-        height:20px;
-        outline: none;
-        border:none;
-        border-bottom: 1px solid black;
-        background-color: white;
-    
+    .submitRegistration {
+        width:90%;
+        height: 50px;
+        margin: auto;
+        border-radius: 5px;
+        background-color: orange;
+        font-size: 25px;
+        font-weight: 700;
+
     }
 
+   
+
     #submit_new_pro_pic {
-       display: none;  
+       display: none; 
+       border:none;
+       background-color: black;
+       color: cornsilk;
+       position: absolute;
+       height:  40px;
+       font-size: 25px;
+       padding: 5px;
+
     } 
+
+    .ionForProPic {
+
+
+
+    }
     
  
     
@@ -145,15 +185,19 @@
        
         
         .profileUploadLabel {
-            /*opacity:0;*/
-            /*transition: 0.7s ease-in-out;*/
+           /* HIDDEN */
             background-color: blue;
             color: white;
-            width:70%;
+            width:70px;
             padding: 7px;
             font-size: 10px;
 
         }
+
+        .profileUploadForm {
+            display: none;
+
+         }    
 
     
     
@@ -161,7 +205,8 @@
        border:none;
        background-color: white;
        color:red;
-       font-size: 20px;
+       padding:10px;
+       font-size: 30px;
         }
     
    
@@ -173,21 +218,30 @@
     
     .navbar ul li{
       list-style: none;
-      padding:5px 0px;
+      padding:10px;
       background-color: white;
       color:black;
-      font-size: 20px;
+      font-size: 30px;
       width:fit-content;
-     
+      transition: 0.9s ease-in-out;
     
         }
     
         .navbar ul li:hover{
             background-color: lightblue;
             border-radius: 10px;
-            padding: 3px;
-            transition: 0.5s ease-in-out;
+            
+
+           
     
+        }
+
+        .navbar ul button:hover {
+            background-color: lightblue;
+            border-radius: 10px;
+           
+            transition: 0.5s ease-in-out;
+
         }
         
         
@@ -209,8 +263,8 @@
             padding: 20px;
         }
     
-        .textAreaDiv {
-         
+        .textAreaDiv textarea {
+            padding-left:10px;
         
            }
     
@@ -255,7 +309,7 @@
     
        .postsContainer {
        display: inline-block;
-        padding-top: 20px;
+        padding-top: 150px;
         width:50vw;
          margin-left:0px; 
         
@@ -285,8 +339,9 @@
        }
 
        .imgProf {
+          
         border-radius: 100%;
-        margin-right: 10px;
+        
         margin-top: 5px;
         margin-bottom: 15px;
 
@@ -350,10 +405,90 @@
             color:red;
             transition: 0.3s ease-in-out;
         }
+
+
+
+
+                        /* Edit the posts in posts.php */
+    
+       .editAbsoluteDiv {
+        display: flex;
+        display: none;  
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background-color:rgba(0,0,128,0.2) ;
+        height:100vh;
+        width:100vw;
+        z-index: 2;
+        top:0px; 
+        left:0px;
+    }
+    
+       .formToEdit {
+            position: relative;
+            border-radius: 6px;
+            padding : 20px;
+            text-align: center;
+            background-color: white;
+            width:350px;
+            height:fit-content;
+    } 
+
+   .formToEdit  ion-icon{
+       position: absolute;
+        display: block;
+        float: right;
+        font-size: 30px;
+        top:0;
+        right:0;
+       
+      
+}
+
+.formToEdit  [type="text"]{
+    outline: none;
+    border:none;
+    box-shadow: 0px 0px 0px 0px blue;
+    height:fit-content;
+    min-height: 100px;
+    width: 90%;
+    margin-bottom: 8px;
+    line-height: 20px;
+    font-family: sans-serif;
+    resize: none;
+}
+
+.formToEdit  [type="submit"]{
+  background-color: #4d4dff;
+  color:white;
+  border: none;
+  padding:8px;
+  margin-right: 8px;
+  
+ 
+}
+
+.formToEdit .deleteBtn {
+
+background-color: red;
+  color:white;
+  width: 85px;
+
+
+
+}
+
+
+.fileLabel {
+ background-color: blue;
+ color: white;
+
+}
     
     
                                                     /*  450 and below */
-       @media screen and (max-width:450px){
+       @media screen and (max-width:500px){
         .navbar {
       
             position: fixed;
@@ -373,25 +508,26 @@
                 position: absolute; 
                 z-index: 3;
                 top:0;
-                width:90vw;
+                width:100vw;
                 height:85px;
                 padding:20px;
+                padding-right:70px;
                 display: flex;
                 flex-direction: row;
+                justify-content: space-between;
                 
-               
-            
-                }
-            .profileUploadForm {
-               
-            }    
+               }
+
+
+          
 
         .navbar ul li {
-            font-size: 10px;
+            font-size: 20px;
+            display: inline-block;
         } 
         
          .navbar ul button {
-            font-size: 10px;
+            font-size: 20px;
 
              
              
@@ -450,6 +586,13 @@
             height:50px;
             width:50px;
             }
+
+            .formToEdit {
+                width:70vw;
+               
+        } 
+
+            
     
     
        }
@@ -477,72 +620,7 @@
     
     
     
-                        /* edit the posts in posts.php */
-    
-       .editAbsoluteDiv {
-        display: flex;
-        display: none;  
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        background-color:rgba(0,0,128,0.2) ;
-        height:100vh;
-        width:100vw;
-        z-index: 2;
-        top:0px; 
-        left:0px;
-    }
-    
-       .formToEdit {
-            position: relative;
-            border-radius: 6px;
-            padding : 20px;
-            text-align: center;
-            background-color: white;
-            width:60vw;
-            height:fit-content;
-    } 
-
-   .formToEdit  ion-icon{
-       position: absolute;
-        display: block;
-        float: right;
-        font-size: 30px;
-        top:0;
-        right:0;
-       
-      
-}
-
-.formToEdit  [type="text"]{
-    outline: none;
-    border:none;
-    box-shadow: 0px 0px 0px 0px blue;
-    height:fit-content;
-    min-height: 100px;
-    width: 90%;
-    margin-bottom: 8px;
-    line-height: 20px;
-    font-family: sans-serif;
-    resize: none;
-}
-
-.formToEdit  [type="submit"]{
-  background-color: #4d4dff;
-  color:white;
-  border: none;
-  padding:8px;
-  margin-right: 8px;
-  
- 
-}
-
-
-.fileLabel {
- background-color: blue;
- color: white;
-
-}
+        
 
 
     
