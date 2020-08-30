@@ -19,7 +19,7 @@
 
 echo ' <div class="contLogSignup"> 
             <form class="form-login" action="index.php" method="post">
-                <label for="unameEmail">Usrname/Email</label> 
+                <label for="unameEmail">Username/Email</label> 
                 <input required type="text" name="unameEmail" id="unameEmail" >
                 <label for="pwd">Password</label> 
                 <input required type="password" name="pwd" id="pwd"  >
