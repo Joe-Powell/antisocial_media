@@ -69,7 +69,7 @@ if(isset($_POST['signup-submit'])) {
 
 
 
- 
+
 
 <div class=formContainer>
   <form class="form-signup" action="register.php" method="post"><br>
