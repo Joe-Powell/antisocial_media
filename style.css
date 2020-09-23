@@ -2,6 +2,7 @@
     font-family: sans-serif;
     padding:0px;
     margin:0px;
+    box-sizing: border-box;
      }
 
    
@@ -85,11 +86,18 @@
         margin-bottom:40px;
     }
 
+    .buttons {
+        width:90%;
+        margin: 10px auto;
+        display: flex;
+        justify-content: space-between;
+
+       }
+
     label {
-        float: left;
-        margin-left: 0px;
-        margin-right: 15px;
-        margin-bottom: 5px;
+      margin: auto;
+      padding: 5px;
+      border-radius: 7px;
         color:white;
     }
     
@@ -158,27 +166,39 @@
      }                            
     
     .navbar {
-       
+        position: fixed;
+        z-index: 3;
         top: 0px;
+        background-color: rgb(250, 245, 245); 
         
-        width:6vw;
-        width: 150px;
-        padding:30px;
+        width:100vw;
+        height:80px;
+        padding:10px;
        
-        display: inline-block;
+        display: flex;
+        justify-content: space-between;
+        
       
     }
     
     
-    /* by making the Ul fixed and not the whole navbar it works combined with 
-    being in a container thats set to display flex flex-direction: row */
+  
     .navbar ul {
-        position: fixed; 
+        background-color: rgb(250, 245, 245); 
+        box-sizing: border-box;
+        width: 70%;
+        max-width: 680px;
         height:fit-content;
+        margin: auto;
+     
         display: flex;
-        flex-direction: column;
-        justify-content: space-between; 
-        background-color: white;
+        flex-direction: row;
+        justify-content: space-between;
+
+       }
+
+       .navbar .imgProf {
+        
 
        }
        
@@ -203,9 +223,11 @@
     
     .navbar ul button {
        border:none;
-       background-color: white;
+       background-color: rgb(250, 245, 245) ;
        color:red;
+      
        font-size: 30px;
+       width:fit-content;
         }
     
    
@@ -217,8 +239,10 @@
     
     .navbar ul li{
       list-style: none;
-      padding:5px 0px;
-      background-color: white;
+      padding:3px;
+      background-color:  rgb(250, 245, 245) ;
+      top: 0px;
+     
       color:black;
       font-size: 30px;
       width:fit-content;
@@ -229,16 +253,21 @@
         .navbar ul li:hover{
             background-color: lightblue;
             border-radius: 10px;
-            padding: 3px;
+            transition: 0.5s ease-in-out;
+    
+        }
+        .navbar ul button:hover{
+            background-color: lightblue;
+            border-radius: 10px;
             transition: 0.5s ease-in-out;
     
         }
         
         
-        .logout {
+        /* .logout {
             width:27px;
-    
-        }
+                got rid of for hover...
+        } */
     
     
 
@@ -246,28 +275,34 @@
     
     
                 /* post.php styling */
+     
     
         .add-post {
             outline: none;
             text-align: center;
             padding: 20px;
+            margin: 200px auto;
+        }
+
+        .textAreaDiv {
+            width:fit-content;
+       
+            
         }
     
         .textAreaDiv textarea {
             padding-left:10px;
+            border: none;
+            box-shadow: 1px 1px 3px 0px #888888;
+            height:160px; 
+            width:350px;
+            resize: none;
+            outline: none;
+
         
            }
     
-       textarea{
-           border: none;
-        box-shadow: 1px 1px 3px 0px #888888;
-        
-           height:20vh; 
-           width:30vw;
-           resize: none;
-           outline: none;
-            
-       }
+      
     
       
      
@@ -301,7 +336,7 @@
        display: inline-block;
         padding-top: 150px;
         width:50vw;
-         margin-left:0px; 
+        margin-left: 15vw; 
         
         
           
@@ -332,7 +367,7 @@
           
         border-radius: 100%;
         
-        margin-top: 5px;
+        margin-top: 0px;
         margin-bottom: 15px;
 
 
@@ -478,7 +513,7 @@ background-color: red;
     
     
                                                     /*  450 and below */
-       @media screen and (max-width:500px){
+       @media screen and (max-width: 520px){
         .navbar {
       
             position: fixed;
@@ -486,6 +521,7 @@ background-color: red;
              height: 85px;
              width:100vw;
              padding:0px;
+             display: flex;
             
             
              
@@ -495,13 +531,10 @@ background-color: red;
             
             .navbar ul {
                 box-sizing: border-box;
-                position: absolute; 
-                z-index: 3;
-                top:0;
-                width:100vw;
-                height:85px;
-                padding:20px;
-                padding-right:70px;
+                height: fit-content;
+                width: 80vw;
+              
+                margin: auto;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -513,7 +546,8 @@ background-color: red;
 
         .navbar ul li {
             font-size: 20px;
-            display: inline-block;
+            
+            
         } 
         
          .navbar ul button {
@@ -523,25 +557,51 @@ background-color: red;
              
          }
         
-        .postsContainer {
-            
+         .navbar .imgProf {
+          margin:auto;
+    
+           }
 
+
+
+                            /* post.php  & addpostform */
+        
+           .add-post {
+            outline: none;
+            text-align: center;
+            padding: 20px;
+            margin: 100px auto;
         }
-        
+
         .textAreaDiv {
-            padding-top:100px;
-            padding-left: 60px;
-          }
-        
-          textarea {
+            width:fit-content;
+       
+            
+        }
+
+
+            /* this is parent of buttons which is nested inside */
+        .textAreaDiv textarea {
+            padding-left:10px;
+            border: none;
+            box-shadow: 1px 1px 3px 0px #888888;
             height:20vh; 
-            width:60vw;
+            width:85vw;
+            resize: none;
+            outline: none;
+
+        
+           }
+         
+           .buttons {
+            width: 90%;
+
            }
         
         video, .postImgmg{
            height:200px;
            width:60vw; 
-           margin:10px auto;
+           /* margin:10px auto; */
            }
            
 

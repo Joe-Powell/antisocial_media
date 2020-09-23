@@ -75,6 +75,13 @@ if(isset($_POST['submit'])) {
 if(isset($_SESSION['userId'])) {
     require "./config/db.php";
     require "./addpostform.php";
+
+
+    
+     
+     
+     
+           
     
     
 }else{

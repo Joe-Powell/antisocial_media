@@ -5,8 +5,8 @@
 <div class="containAll">
 
 <nav class="navbar">
-    <ul>
-    <?php  if(isset($_SESSION['userId'])) {
+
+<?php  if(isset($_SESSION['userId'])) {
          $sessionid =  $_SESSION['userId'];
          //   echo "Your session ID =  $sessionid";
            $stmt = $pdo -> prepare("SELECT * FROM profileimg WHERE userid = ? ");
@@ -45,7 +45,10 @@
             <input type='submit' name='submit_new_pro_pic' id='submit_new_pro_pic' value='Insert uploaded picture'   >
         </form>
     
-            
+     
+
+<ul>  
+   
         <a href="index.php"><li>Profile</li></a>
         <a href="posts.php"><li>Feed</li></a>
         <a href="post.php"><li>Post</li></a>
