@@ -42,17 +42,7 @@
     </form>
 
 
-    <script>
 
-        /// tryint to get the filename before uploading... NOT WORKING
-        document.querySelector('.fileLabel').addEventListener('click', () => {
-          let uploadPictureValue = document.querySelector('.uploadPicture').value;
-            document.querySelector('.spanImageFile').innerHTML= uploadPictureValue;
-            
-        })
-
-
-    </script>
 
   
 
