@@ -158,7 +158,7 @@
  
     
     
-                /* NavBar styling */
+                /*********************************** NavBar styling *********************************************/
     
     .containAll {
       display: flex;
@@ -174,9 +174,8 @@
         width:100vw;
         height:80px;
         padding:10px;
-       
-        display: flex;
-        justify-content: space-between;
+         display: flex;
+         /* justify-content: space-between;   */
         
       
     }
@@ -186,20 +185,27 @@
     .navbar ul {
         background-color: rgb(250, 245, 245); 
         box-sizing: border-box;
-        width: 70%;
-        max-width: 680px;
+        width: 300px;
         height:fit-content;
-        margin: auto;
+        margin:0px 100px;
      
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
 
        }
 
        .navbar .imgProf {
-        
+        border-radius: 100%;
+        margin :0px 0px 0px 20px;
+       
+        }
 
+                    /* font awesome icons */
+       .navbar .fa-home, .fa-user-friends, .fa-download, .fa-expeditedssl {
+            color:#00000099; 
+           width:100%;
+           text-align: center;
+          
        }
        
        
@@ -225,8 +231,8 @@
        border:none;
        background-color: rgb(250, 245, 245) ;
        color:red;
-      
-       font-size: 30px;
+      padding-bottom:3px;
+       font-size: 20px;
        width:fit-content;
         }
     
@@ -243,31 +249,43 @@
       background-color:  rgb(250, 245, 245) ;
       top: 0px;
      
-      color:black;
-      font-size: 30px;
+      color:#00000099; 
+      font-size: 20px;
       width:fit-content;
      
     
         }
     
+
+        .navbar ul a:hover{
+            
+        }
+                   
         .navbar ul li:hover{
-            background-color: lightblue;
-            border-radius: 10px;
-            transition: 0.5s ease-in-out;
+            /* color:black;
+            transition: 0.5s ease-in-out; */
+
     
         }
-        .navbar ul button:hover{
-            background-color: lightblue;
-            border-radius: 10px;
-            transition: 0.5s ease-in-out;
-    
-        }
-        
-        
-        /* .logout {
-            width:27px;
-                got rid of for hover...
+
+        /* .navbar .fa-home:hover, .fa-user-friends:hover, .fa-download:hover {
+            color:black;
         } */
+
+
+        .navbar ul a:hover, .fa-home:hover, .fa-user-friends:hover, .fa-download:hover{
+            /* color:black; */
+        }
+
+
+        .navbar ul button:hover{
+            
+         
+    
+        }
+        
+        
+  
     
     
 
@@ -363,15 +381,7 @@
     
        }
 
-       .imgProf {
-          
-        border-radius: 100%;
-        
-        margin-top: 0px;
-        margin-bottom: 15px;
-
-
-     }
+       
 
        video {
         width: 100%;
@@ -532,7 +542,7 @@ background-color: red;
             .navbar ul {
                 box-sizing: border-box;
                 height: fit-content;
-                width: 80vw;
+                width: 60vw;
               
                 margin: auto;
                 display: flex;
