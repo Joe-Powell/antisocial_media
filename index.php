@@ -2,60 +2,118 @@
         require "./config/db.php";
 
 
-        ///// upload new profile picture
-
-        if(isset($_POST['submit_new_pro_pic'])){
-            require "./config/db.php";
-
-            $sessionid =  $_SESSION['userId'];
-
-            $file = $_FILES['profileUpload'];
-          
-            //print_r($file);
-            $fileName = $file['name'];
-            $fileType = $file['type'];
-            $fileTmpName = $file['tmp_name'];
-            $fileError= $file['error'];
-            $fileSize = $file['size'];
-            $fileExt = explode('.', $fileName);
         
-         
-            $fileActualExt = strtolower(end($fileExt));
-            //print_r($fileName);
-        
-            $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-         
-            if (in_array($fileActualExt, $allowed)) {
-                if ($fileError ===0) {
-                    if ($fileSize < 8000000) {
-                        $fileNameNew = "profile".$sessionid.".". $fileActualExt;
-                        $fileDestination = 'uploads/'.$fileNameNew;
-        
-                        move_uploaded_file($fileTmpName, $fileDestination);
-                        $stmt = $pdo -> prepare("UPDATE profileimg SET status=1 WHERE userid = ?");
-                        $stmt -> execute([$sessionid]);
-                        $stmt = $pdo -> prepare("UPDATE profileimg SET ext = ? WHERE userid = ?");
-                        $stmt -> execute([$fileActualExt, $sessionid]);
+///// Register this comes from register.php  the action sends it here......////////////////////////////////////////////////////////////////////
+if(isset($_POST['signup-submit'])) {
+    require "./config/db.php";
+    $username = $_POST['username']; 
+    $email = $_POST['email']; 
+    $password = $_POST['pwd']; 
+    $passwordRepeat = $_POST['pwd-repeat'];
+    $location = $_POST['location'];
+    $profession = $_POST['profession'];
+    $about = $_POST['about'];
 
-                       
+    if ($password !== $passwordRepeat) {
+      $message = "passwords don't match";
 
+    }else{
+       $stmt = $pdo ->prepare( "SELECT username FROM users WHERE username=?");
+        $stmt -> execute([$username]);
+        $totalUsers = $stmt -> rowCount();
+       
+       if($totalUsers > 0) {
+       
+      $emailTaken = 'Email already taken <br>';
+    }else {
+        $stmt = $pdo -> prepare('INSERT into users (username, email, password) VALUES(?, ?, ?)');
+        $stmt -> execute([$username, $email, $password]);
+
+
+
+
+        $stmt = $pdo -> prepare("SELECT * FROM users WHERE username = ? ");
+        $stmt -> execute([$username]);
+        $profile = $stmt->fetch();
+
+        $userid = $profile->id;
+        $usersName = $profile->username;
+
+        $stmt = $pdo -> prepare("INSERT INTO profileimg(userid, status, location, profession, about, name)       #so when you first sign up it pushes the id into profileimg's userid column
+            VALUES(?, ?, ?, ?, ?, ?)");
+          $stmt -> execute([$userid, 0, $location, $profession, $about, $usersName]);
+ 
+ 
+
+
+    }
+
+ }
+
+}
+
+///////////////////////end registration///////////////////////////////////////////////////////////////////////
+
+
+
+       
+
+    ///////////////////////////////////////// upload new profile picture///////////////////////////////////////////////////////////////////////
+    if(isset($_POST['submit_new_pro_pic'])){
+        require "./config/db.php";
+
+        $sessionid =  $_SESSION['userId'];
+
+        $file = $_FILES['profileUpload'];
         
-                    }else {
-                        echo 'your file is too big';
-                    }
-                } else{
-                    echo 'There was an error uploading';
+        //print_r($file);
+        $fileName = $file['name'];
+        $fileType = $file['type'];
+        $fileTmpName = $file['tmp_name'];
+        $fileError= $file['error'];
+        $fileSize = $file['size'];
+        $fileExt = explode('.', $fileName);
+    
+        
+        $fileActualExt = strtolower(end($fileExt));
+        //print_r($fileName);
+    
+        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+        
+        if (in_array($fileActualExt, $allowed)) {
+            if ($fileError ===0) {
+                if ($fileSize < 8000000) {
+                    $fileNameNew = "profile".$sessionid.".". $fileActualExt;
+                    $fileDestination = 'uploads/'.$fileNameNew;
+    
+                    move_uploaded_file($fileTmpName, $fileDestination);
+                    $stmt = $pdo -> prepare("UPDATE profileimg SET status=1 WHERE userid = ?");
+                    $stmt -> execute([$sessionid]);
+                    $stmt = $pdo -> prepare("UPDATE profileimg SET ext = ? WHERE userid = ?");
+                    $stmt -> execute([$fileActualExt, $sessionid]);
+
+                    
+
+    
+                }else {
+                    echo 'your file is too big';
                 }
-            }else {
-                echo 'You cannot upload files of this type';
+            } else{
+                echo 'There was an error uploading';
             }
-            
+        }else {
+            echo 'You cannot upload files of this type';
         }
+        
+    }
+
+
+    /////////////////////////End upload new profile picture//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
-
+    //////////////////////////////////////  Login submission   ////////////////////////////////////////////////////////////////////////
   if(isset($_POST['login-submit'])) {
        require "./config/db.php";
         $unameEmail = $_POST['unameEmail'];
@@ -87,7 +145,8 @@
 
     }     
     
-    
+
+//////////////////////////End Login submission ///////////////////////////////////////////////////////////////////////////////////////////////
     
     require "./includes/header.php";
    
@@ -102,8 +161,28 @@
 
 <?php  
 
+////////////////////////////////////////////// Submission of edit bio editBioSubmission  ///////////////////////////////////////
+if(isset($_POST['editBioSubmission'])) {
+    require "./config/db.php";
+    $editLocation = $_POST['editLocation'];
+    $editProfession = $_POST['editProfession'];
+    $editAbout = $_POST['editAbout'];
+    $the_id = $_POST['the_id'];
+    $stmt = $pdo->prepare("UPDATE profileimg SET location='$editLocation', profession = '$editProfession', about= '$editAbout' WHERE userid = ? ");   
+    $stmt->execute([$the_id]);
+
+
+
+
+}
+
+/////////////////////////////////////////////////end editBioSubmission    //////////////////////////////////////////////////////////
+
+
+            ///////////////////////////////////////if is logged in 
 if(isset($_SESSION['userId'] )) {
-    
+
+    /////////$_GET START so this is if looking at a Profile/////////////////
     if(isset($_GET['user'])) {
         if($_SESSION['userId'] == $_GET['user']) {
          $getUsersId = $_GET['user'];
@@ -111,10 +190,13 @@ if(isset($_SESSION['userId'] )) {
          $stmt->execute([$getUsersId]);
          $posts = $stmt->fetchAll();
             
+        
         echo "<div class='postsContainer'>";
 
 
  foreach($posts as $post) { 
+
+
 
     echo "<div class='containerDivs'>";
     
@@ -162,13 +244,6 @@ echo "<h3> ".$post->author."</h3>";
  }  
       
 
-
-
-
-
-
-
-       
     if($post->video  && $post->image ) {
       echo   "<P>$post->body</p>
       <img class='postImg' src='uploads/".$post->image."' >
@@ -317,10 +392,10 @@ echo "</div>";
 
 }
    
-} 
+    } //$_GET ends here so this was if looking at a Profile///////////////////////////////////////////////////
 
 
-                    // index.php with no endpoints so just your profile page from navbar selection
+                    //////////////// index.php home...
 else{
 
  
@@ -328,6 +403,49 @@ else{
     $stmt = $pdo->prepare("SELECT * FROM posts WHERE inputid = ? ");
     $stmt->execute([$sessionId]);
     $posts = $stmt->fetchAll();
+
+  
+
+    // profile Bio 
+    $stmt = $pdo -> prepare("SELECT * FROM profileimg WHERE userid = ? ");
+    $stmt -> execute([$_SESSION['userId']]);
+    $profimg = $stmt->fetch();
+    
+    echo "<div class='UserCrudentials' id='UserCrudentials'>
+    <h3>Biography</h3><H6 class='editBioBtn' id='$profimg->id' >edit</h6> <br>
+    <p><b>Name</b> $profimg->name</p>
+     <p><b>From</b>$profimg->location</p>
+     <p><b>Profession</b> $profimg->profession</p>
+     <p><b>About</b> $profimg->about</p>
+     </div>";
+
+
+     // edit Biography form and container
+     echo "<div class='editBiographyContain'>
+        
+
+     <form class='editBioForm' action='index.php' method='POST'>
+
+            <input type='hidden' name='the_id' value='$profimg->userid' >
+     
+             <label for='editLocation'>Location</label> 
+             <input type='text' name='editLocation' id='editLocation'  value='$profimg->location' >
+
+             <label for='editProfession'>Profession</label> 
+             <input type='text' name='editProfession' id='editProfession'  value='$profimg->profession' >
+
+             <label for='editAbout'>About me</label> 
+             <input type='text' name='editAbout' id='editAbout'  value='$profimg->about' ><br>
+
+             <button class='submitRegistration'  type='submit' name='editBioSubmission'>Submit Changes</button>
+     </form>
+
+     <ion-icon name='close'></ion-icon>
+ 
+
+
+</div>";
+
 
 
     echo "<div class='postsContainer'>";
@@ -455,4 +573,4 @@ echo "</div>";
 
 
 
-<?php require "./includes/footer.php";?>
+<?php require "./includes/footer.php";  ?>

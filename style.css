@@ -149,21 +149,82 @@
 
     } 
 
-    .ionForProPic {
-
-
-
+    .forRelative {
+        position: relative;
     }
+
+    .forRelative ion-icon {
+        position: absolute;
+        right: -10px;
+        bottom: 0px;
+        cursor: pointer;
+       color:blue;
+    }
+
+    .containAll {
+        display: flex;
+        flex-direction: row;
+       }   
+       
+       .UserCrudentials{
+           margin-top: 100px;
+           padding:10px 10px 0px 10px;
+           width: 200px;
+           font-size: small;
+           box-shadow: 1px 1px 3px 0px #888888        
+       }
+
+       .UserCrudentials p {
+           margin-bottom: 6px;
+       }
+       .UserCrudentials b {
+           display: block;
+       }
+
+       .UserCrudentials h6 {
+           color:blue;
+       }
+
+       .editBiographyContain {
+            height:100vh;
+            width:100vw;
+            display: none;
+            position: absolute;
+            z-index: 4;
+            background-color: rgba(24, 77, 224, 0.9);
+       }
+
+       .editBiographyContain h2 {
+           text-align: center;
+       }
+
+       .editBiographyContain ion-icon {
+           font-size: 150px;
+       }
+
+       .editBioForm {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        padding:30px 10px;
+
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 25px;
+        width:380px;
+        color:black ;
+        background-color: blue;
+        border:1px solid blue;
+           
+       }
     
  
     
     
                 /*********************************** NavBar styling *********************************************/
     
-    .containAll {
-      display: flex;
-      flex-direction: row;
-     }                            
+    
     
     .navbar {
         position: fixed;
@@ -197,6 +258,7 @@
        .navbar .imgProf {
         border-radius: 100%;
         margin :0px 0px 0px 20px;
+        cursor: pointer;
        
         }
 
@@ -352,9 +414,9 @@
     
        .postsContainer {
        display: inline-block;
-        padding-top: 150px;
+        padding-top: 100px;
         width:50vw;
-        margin-left: 15vw; 
+        margin-left: 10px; 
         
         
           

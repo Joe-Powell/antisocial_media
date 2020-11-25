@@ -10,7 +10,7 @@
 
 <?php
 
-
+    //////////////////////////////////////////DELETE
 if(isset($_POST['delete'])) {
     require "./config/db.php";
     $the_id = $_POST['the_id'];
@@ -58,6 +58,27 @@ if(isset($_SESSION['userId'])) {
 
 
 
+<?php 
+// profile Bio
+$stmt = $pdo -> prepare("SELECT * FROM profileimg WHERE userid = ? ");
+$stmt -> execute([$_SESSION['userId']]);
+$profimg = $stmt->fetch();
+
+
+echo "<div class='UserCrudentials' id='UserCrudentials'>
+<h3>Biography</h3><H6>edit</h6> <br>
+<p><b>Name</b> $profimg->name</p>
+<p><b>From</b>$profimg->location</p>
+<p><b>Profession</b> $profimg->profession</p>
+<p><b>About</b> $profimg->about</p>
+ </div>";
+
+
+ ?>
+
+
+
+
 <div class="postsContainer">
 
 
@@ -68,7 +89,7 @@ if(isset($_SESSION['userId'])) {
 
 
     
-<!-- This will give the Profile picture for every post -->
+                <!-- This will give the Profile picture for every post -->
     <img class='imgProf' src='<?php
         $stmt = $pdo -> prepare("SELECT * FROM profileimg WHERE userid = ? ");
      $stmt -> execute([$post->inputId]);

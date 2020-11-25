@@ -1,3 +1,7 @@
+
+
+
+
 let editAbsoluteDiv = document.querySelectorAll('.editAbsoluteDiv');
 let editBtn = document.querySelectorAll('.editBtn');
 let ionIcon = document.querySelectorAll('.formToEdit ion-icon');
@@ -33,49 +37,63 @@ for (let i = 0; i < editBtn.length; i++) {
 
 
 
-/// for profile image
+////////////////////////////////////////////Profil picture changing/////////////////////////////////
 
 
 let profileUploadLabel = document.getElementById('profileUploadLabel');
 let submit_new_pro_pic = document.getElementById('submit_new_pro_pic');
-
-
-let imgProf = document.querySelector('.imgProf');
+let profileUpload = document.getElementById('profileUpload');
+let cameraProf = document.querySelector('.forRelative ion-icon');
 let profileUploadForm = document.querySelector('.profileUploadForm');
 
 
 
-profileUploadLabel.addEventListener('click', () => {
 
-    if (submit_new_pro_pic.style.display == 'block') {
-        submit_new_pro_pic.style.display = 'none';
+console.log('main.js connected......');
+console.log(imgProf);
 
-    } else {
-        submit_new_pro_pic.style.display = 'block';
-    }
-})
 
+
+
+
+
+// when a picture is selected, submit will be clicked! problem now is the cashe wont refresh
+profileUpload.addEventListener('change', () => { submit_new_pro_pic.click(); })
 
 
 
 // when click on profile picture
 imgProf.addEventListener('click', () => {
+    console.log('clicked')
     profileUploadLabel.click();
-
-    if (profileUploadForm.style.display == 'block') {
-        profileUploadForm.style.display = 'none';
-
-    } else {
-        profileUploadForm.style.display = 'block';
-    }
-
-
 
 })
 
+// also when you click the camera
+cameraProf.addEventListener('click', () => {
+    console.log('clicked')
+    profileUploadLabel.click();
+
+})
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
+
+
+
+
+
+
+/////////////////////////Edit Biography /////////////////////////////////////////////
+
+const editBioBtn = document.querySelector('.editBioBtn');
+const exitEditBioIcon = document.querySelector('.editBiographyContain ion-icon');
+const editBiographyContain = document.querySelector('.editBiographyContain');
+
+editBioBtn.addEventListener('click', () => { editBiographyContain.style.display = 'flex' })
+exitEditBioIcon.addEventListener('click', () => { editBiographyContain.style.display = 'none' })
 
 
 
