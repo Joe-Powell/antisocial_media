@@ -1,6 +1,18 @@
 //////////////////////////////////
-Add a column:
 
-ALTER TABLE Customers
+****Add a column:****
+
+ALTER TABLE profileimg
 ADD Email varchar(255);
+
+
+
+****Add multiple columns:*****
+
+ALTER TABLE profileimg
+ADD location varchar(255),
+ADD profession varchar(255),
+ADD about varchar(255),
+ADD name varchar(255)
+;
 //////////////////////////////////

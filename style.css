@@ -135,31 +135,7 @@
 
     }
 
-   
-
-    #submit_new_pro_pic {
-       display: none; 
-       border:none;
-       background-color: black;
-       color: cornsilk;
-       position: absolute;
-       height:  40px;
-       font-size: 25px;
-       padding: 5px;
-
-    } 
-
-    .forRelative {
-        position: relative;
-    }
-
-    .forRelative ion-icon {
-        position: absolute;
-        right: -10px;
-        bottom: 0px;
-        cursor: pointer;
-       color:blue;
-    }
+    
 
     .containAll {
         display: flex;
@@ -270,17 +246,6 @@
           
        }
        
-       
-        
-        .profileUploadLabel {
-           /* HIDDEN */
-            background-color: blue;
-            color: white;
-            width:70px;
-            padding: 7px;
-            font-size: 10px;
-
-        }
 
         .profileUploadForm {
             display: none;
@@ -317,6 +282,21 @@
      
     
         }
+
+         /*  div for profile pic and camera icon*/
+    .forRelative {
+        position: relative;
+        height:fit-content;
+        margin:auto;
+    }
+
+    .forRelative ion-icon {
+        position: absolute;
+        right: -6px;
+        bottom: 0px;
+        cursor: pointer;
+       color:blue;
+    }
     
 
         .navbar ul a:hover{
@@ -633,6 +613,75 @@ background-color: red;
           margin:auto;
     
            }
+
+           /*  div for profile pic and camera icon*/
+    .forRelative {
+        position: relative;
+        height:fit-content;
+        margin:auto;
+    }
+
+    .forRelative ion-icon {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        cursor: pointer;
+       color:blue;
+    }
+
+            /* Biography and edit bio */
+        .UserCrudentials{
+            margin-top: 100px;
+            padding:10px 10px 0px 10px;
+            width: 200px;
+            font-size: small;
+            box-shadow: none;       
+        }
+ 
+        .UserCrudentials p {
+            margin-bottom: 6px;
+        }
+        .UserCrudentials b {
+            display: block;
+        }
+ 
+        .UserCrudentials h6 {
+            color:blue;
+        }
+ 
+        .editBiographyContain {
+             height:100vh;
+             width:100vw;
+             display: none;
+             position: absolute;
+             z-index: 4;
+             background-color: rgba(24, 77, 224, 0.9);
+        }
+ 
+        .editBiographyContain h2 {
+            text-align: center;
+        }
+ 
+        .editBiographyContain ion-icon {
+            font-size: 150px;
+        }
+ 
+        .editBioForm {
+         text-align: center;
+         display: flex;
+         flex-direction: column;
+         margin: auto;
+         padding:30px 10px;
+ 
+         text-decoration: none;
+         font-weight: 900;
+         font-size: 25px;
+         width:380px;
+         color:black ;
+         background-color: blue;
+         border:1px solid blue;
+            
+        }
 
 
 

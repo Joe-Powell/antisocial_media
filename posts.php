@@ -66,12 +66,40 @@ $profimg = $stmt->fetch();
 
 
 echo "<div class='UserCrudentials' id='UserCrudentials'>
-<h3>Biography</h3><H6>edit</h6> <br>
+<h3>Biography</h3><H6 class='editBioBtn' >edit</h6> <br>
 <p><b>Name</b> $profimg->name</p>
 <p><b>From</b>$profimg->location</p>
 <p><b>Profession</b> $profimg->profession</p>
 <p><b>About</b> $profimg->about</p>
  </div>";
+
+
+
+    // edit Biography form and container
+    echo "<div class='editBiographyContain'>
+        
+
+    <form class='editBioForm' action='index.php' method='POST'>
+
+           <input type='hidden' name='the_id' value='$profimg->userid' >
+    
+            <label for='editLocation'>Location</label> 
+            <input type='text' name='editLocation' id='editLocation'  value='$profimg->location' >
+
+            <label for='editProfession'>Profession</label> 
+            <input type='text' name='editProfession' id='editProfession'  value='$profimg->profession' >
+
+            <label for='editAbout'>About me</label> 
+            <input type='text' name='editAbout' id='editAbout'  value='$profimg->about' ><br>
+
+            <button class='submitRegistration'  type='submit' name='editBioSubmission'>Submit Changes</button>
+    </form>
+
+    <ion-icon name='close'></ion-icon>
+
+
+
+</div>";
 
 
  ?>

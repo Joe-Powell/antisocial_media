@@ -412,7 +412,7 @@ else{
     $profimg = $stmt->fetch();
     
     echo "<div class='UserCrudentials' id='UserCrudentials'>
-    <h3>Biography</h3><H6 class='editBioBtn' id='$profimg->id' >edit</h6> <br>
+    <h3>Biography</h3><H6 class='editBioBtn' >edit</h6> <br>
     <p><b>Name</b> $profimg->name</p>
      <p><b>From</b>$profimg->location</p>
      <p><b>Profession</b> $profimg->profession</p>
