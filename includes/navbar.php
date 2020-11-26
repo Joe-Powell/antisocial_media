@@ -25,8 +25,8 @@
                  echo " <div class='forRelative' > <img class='imgProf' id='imgProf' src='uploads/profileDefault.png'  height='60' width='60' ".mt_rand()."> <ion-icon name='camera'></ion-icon> </div> ";
                 }
          
-             if($profimg->status == 1){
-                 echo "<div class='forRelative' >  <img class='imgProf' id='imgProf'  src='uploads/profile".$profimg->userid.".".$profimg->ext." ' height='60' width='60' ".mt_rand()."> <ion-icon name='camera'></ion-icon> </div>  ";   
+             if($profimg->status == 1){                                                                                                         /*this will make sure the cache dont hold the old image */
+                 echo "<div class='forRelative' >  <img class='imgProf' id='imgProf'  src='uploads/profile".$profimg->userid.".".$profimg->ext."?".mt_rand()." ' height='60' width='60' > <ion-icon name='camera'></ion-icon> </div>  ";   
                 }
          
            }

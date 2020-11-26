@@ -232,6 +232,7 @@
        }
 
        .navbar .imgProf {
+          
         border-radius: 100%;
         margin :0px 0px 0px 20px;
         cursor: pointer;
@@ -287,7 +288,7 @@
     .forRelative {
         position: relative;
         height:fit-content;
-        margin:auto;
+        
     }
 
     .forRelative ion-icon {
@@ -610,6 +611,8 @@ background-color: red;
          }
         
          .navbar .imgProf {
+            height:50px;
+            width:50px;
           margin:auto;
     
            }
@@ -753,10 +756,7 @@ background-color: red;
                  font-size: 13px;
                 }
 
-        .imgProf {
-            height:50px;
-            width:50px;
-            }
+        
 
             .formToEdit {
                 width:70vw;
