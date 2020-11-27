@@ -385,6 +385,7 @@ echo "<h3> ".$post->author."</h3>";
 echo "</div>";
 
 }  
+//// end of for each here,  $posts as $post this is pdo so we use $post->body ..... 
 
 
 
@@ -534,11 +535,19 @@ echo "<h3> ".$post->author."</h3>";
 }
     
   if($_SESSION['userId'] == $post->inputId) {
+
+
+
+    /*So this editAbsoluteDiv which exists for every post is set to display='none', 
+    which has a form inside it, it holds the hidden ID for that particular post, and body. 
+    we loop through them all and make the individual one pop up display ='flex'. 
+    it is absolute with a background so you cant click other edit buttons. 
+    remember that this hidden input has a name called 'the_id' to grab its value  */
         
-    echo "<div class='editAbsoluteDiv'>
+    echo "<div class='editAbsoluteDiv'>                                     
         <form class='formToEdit' action='posts.php' method='POST'>
             <ion-icon name='close-outline'></ion-icon>
-            <textarea name='the_body' type='text' value='". $post->body."' >echo $post->body </textarea>
+            <textarea name='the_body' type='text' value='". $post->body."' > $post->body </textarea>
             
             <input name='the_id' type='hidden' value='".$post->id."'>
             <input name='submit' type='submit' value='Save Changes'>
