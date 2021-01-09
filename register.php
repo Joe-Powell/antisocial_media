@@ -20,11 +20,11 @@
 
 
 <div class=formContainer>
-  <form class="form-signup" action="index.php" method="post"><br>
-
-        <input required type="text" name="username" placeholder="username"><br>
-
-        <input required type="text" name="email" placeholder="E-mail"><br>
+  <form class="form-signup" id='formSignup' action="index.php" method="post"><br>
+  <div id='errorLanding'></div>
+        <input id='username' type="text" name="username"  ><br>
+            
+        <input id='email'  type="text" name="email" placeholder="E-mail"><br>
 
 
                 <label for="location">Location</label> 
@@ -39,11 +39,11 @@
         
         <label for="pwd">password</label> 
 
-        <input required type="password" name="pwd" placeholder="Password"><br>
+        <input id='pwd' required type="password" name="pwd" placeholder="Password"><br>
 
-        <input required type="password" name="pwd-repeat" placeholder="Confirm Password"><br>
+        <input id='pwdRepeat' required type="password" name="pwd-repeat" placeholder="Confirm Password"><br>
 
-        <button class='submitRegistration'  type="submit" name="signup-submit">Submit</button>
+        <button class='submitRegistration' id='submitRegistration'  type="submit" name="signup-submit">Submit</button>
 
           <?php if(isset($message)){  ?> 
           <h3><?php echo $message ?></h3>

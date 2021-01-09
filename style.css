@@ -5,6 +5,12 @@
     box-sizing: border-box;
      }
 
+     body{
+        min-height:100vh;
+        background-image: url(./uploads/skycover.jpg);
+        background-repeat: no-repeat; 
+        background-size: cover; 
+     }
    
 
      #editProImgBtn {
@@ -143,10 +149,14 @@
        }   
        
        .UserCrudentials{
+           position:fixed;
            margin-top: 100px;
-           padding:10px 10px 0px 10px;
+           margin-left: 15px;
+           padding:10px 10px 200px 10px;
+           height:fit-content;
            width: 200px;
            font-size: small;
+           background-color: white;
            box-shadow: 1px 1px 3px 0px #888888        
        }
 
@@ -175,15 +185,17 @@
        }
 
        .editBiographyContain ion-icon {
-           font-size: 150px;
+        font-size: 60px;
+        margin-left: 85%;
+        
        }
 
        .editBioForm {
         text-align: center;
         display: flex;
         flex-direction: column;
-        margin: auto;
-        padding:30px 10px;
+        margin: 10% auto;
+        padding:0px 10px 20px 10px;
 
         text-decoration: none;
         font-weight: 900;
@@ -193,6 +205,22 @@
         background-color: blue;
         border:1px solid blue;
            
+       }
+
+       .editBioForm input {
+           height: 30px;
+           padding-left: 10px;
+           outline: none;
+           border-radius: 6px;
+       }
+
+       .editBioForm textarea {
+           height:30px;
+           padding-left: 10px;
+           border-radius: 6px;
+            resize: none;
+            outline: none;
+
        }
     
  
@@ -237,6 +265,12 @@
         margin :0px 0px 0px 20px;
         cursor: pointer;
        
+        }
+
+        .containerDivs .imgProf {
+        border-radius: 100%;
+        margin :0px 0px 0px 0px;
+
         }
 
                     /* font awesome icons */
@@ -397,7 +431,7 @@
        display: inline-block;
         padding-top: 100px;
         width:50vw;
-        margin-left: 10px; 
+        margin-left: 215px; 
         
         
           
@@ -418,7 +452,7 @@
             margin-bottom: 10px;
             border-radius: 9px;
             padding: 10px;
-            background-color: white;
+             background-color: white; 
             font-size: 13px;
     
     
@@ -565,7 +599,7 @@ background-color: red;
 }
     
     
-                                                    /*  450 and below */
+                                                    /*****  450 and below  ******/
        @media screen and (max-width: 520px){
         .navbar {
       
@@ -634,7 +668,10 @@ background-color: red;
 
             /* Biography and edit bio */
         .UserCrudentials{
-            margin-top: 100px;
+            
+            margin:100px auto;
+            margin-bottom: 20px;
+            position: static;
             padding:10px 10px 0px 10px;
             width: 200px;
             font-size: small;
@@ -653,7 +690,7 @@ background-color: red;
         }
  
         .editBiographyContain {
-             height:100vh;
+             height:100%;
              width:100vw;
              display: none;
              position: absolute;
@@ -666,20 +703,23 @@ background-color: red;
         }
  
         .editBiographyContain ion-icon {
-            font-size: 150px;
+            font-size: 60px;
+            margin-left: 75%;
+          
+            
         }
  
         .editBioForm {
          text-align: center;
          display: flex;
          flex-direction: column;
-         margin: auto;
-         padding:30px 10px;
+         margin: 30% auto;
+         padding:0px 10px 20px 10px;
  
          text-decoration: none;
          font-weight: 900;
          font-size: 25px;
-         width:380px;
+         width:300px;
          color:black ;
          background-color: blue;
          border:1px solid blue;
@@ -737,8 +777,8 @@ background-color: red;
         
         .postsContainer {
             width:80vw;
-            margin-left:15vw;
-            background-color: white;   
+            margin:auto;
+            
     
             
            }
@@ -752,7 +792,7 @@ background-color: red;
                  margin-bottom: 8px;
                  border-radius: 9px;
                  padding: 10px;
-                 background-color: white;
+                 
                  font-size: 13px;
                 }
 

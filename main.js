@@ -50,7 +50,7 @@ let profileUploadForm = document.querySelector('.profileUploadForm');
 
 
 console.log('main.js connected......');
-console.log(imgProf);
+
 
 
 
@@ -91,11 +91,10 @@ cameraProf.addEventListener('click', () => {
 const editBioBtn = document.querySelector('.editBioBtn');
 const exitEditBioIcon = document.querySelector('.editBiographyContain ion-icon');
 const editBiographyContain = document.querySelector('.editBiographyContain');
+const editBiographyTextarea = document.querySelector('.editBiographyContain textarea');
 
-editBioBtn.addEventListener('click', () => { editBiographyContain.style.display = 'flex' })
-exitEditBioIcon.addEventListener('click', () => { editBiographyContain.style.display = 'none' })
-
-
+editBioBtn.addEventListener('click', () => { editBiographyContain.style.display = 'inline-block'; editBiographyTextarea.focus() })
+exitEditBioIcon.addEventListener('click', () => { editBiographyContain.style.display = 'none'; })
 
 
 
