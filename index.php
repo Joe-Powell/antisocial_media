@@ -135,8 +135,8 @@ if (isset($_SESSION['userId'])) {
     </form>
     </div>";
 } else {
-    header('Location: index.php');
-    //echo "somethings wrong index line 139 here";
+    //header('Location: index.php');
+    echo "index line 139 here";
 }
 
 ?>
