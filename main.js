@@ -93,8 +93,65 @@ const exitEditBioIcon = document.querySelector('.editBiographyContain ion-icon')
 const editBiographyContain = document.querySelector('.editBiographyContain');
 const editBiographyTextarea = document.querySelector('.editBiographyContain textarea');
 
-editBioBtn.addEventListener('click', () => { editBiographyContain.style.display = 'inline-block'; editBiographyTextarea.focus() })
-exitEditBioIcon.addEventListener('click', () => { editBiographyContain.style.display = 'none'; })
+if (editBioBtn) {
+    // was getting error in GET
+    editBioBtn.addEventListener('click', () => { editBiographyContain.style.display = 'inline-block'; editBiographyTextarea.focus() })
+};
+
+if (exitEditBioIcon) {
+    // was getting error in GET
+    exitEditBioIcon.addEventListener('click', () => { editBiographyContain.style.display = 'none'; })
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+//////////////Comments//////////////////////////////////////////////////////////////////////////
+
+let editBtnForComment = document.querySelectorAll('.editBtnForComment');
+let editCommentForm = document.querySelectorAll('.editCommentForm');
+
+for (let i = 0; i < editBtnForComment.length; i++) {
+    editBtnForComment[i].addEventListener('click', () => {
+        console.log('clicked');
+        editCommentForm[i].classList.toggle('editCommentFormActive');
+
+
+    })
+
+}
+
+
+
+
+
+let comment = document.querySelectorAll('.comment');
+let comments = document.querySelectorAll('.comments');
+
+
+for (let i = 0; i < comment.length; i++) {
+
+    comment[i].addEventListener('click', () => { comments[i].classList.toggle('commentsActive'); });
+
+
+}
+
+// Leave A comment 
+const commentHeading = document.querySelectorAll('.commentHeading');
+const leaveCommentForm = document.querySelectorAll('.leaveCommentForm');
+
+
+for (let i = 0; i < commentHeading.length; i++) {
+    commentHeading[i].addEventListener('click', () => { leaveCommentForm[i].classList.toggle('leaveCommentFormActive') });
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

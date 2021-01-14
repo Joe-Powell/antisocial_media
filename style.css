@@ -7,9 +7,11 @@
 
      body{
         min-height:100vh;
-        background-image: url(./uploads/skycover.jpg);
+        /* background-image: url(./uploads/skycover.jpg);
         background-repeat: no-repeat; 
-        background-size: cover; 
+        background-size: cover;  */
+
+        background-color: #f8f8f2;
      }
    
 
@@ -152,7 +154,7 @@
            position:fixed;
            margin-top: 100px;
            margin-left: 15px;
-           padding:10px 10px 200px 10px;
+           padding:10px 10px 20px 10px;
            height:fit-content;
            width: 200px;
            font-size: small;
@@ -259,10 +261,10 @@
 
        }
 
-       .navbar .imgProf {
+       .imgProf {
           
         border-radius: 100%;
-        margin :0px 0px 0px 20px;
+        margin :0px 0px 0px 0px;
         cursor: pointer;
        
         }
@@ -322,12 +324,14 @@
     .forRelative {
         position: relative;
         height:fit-content;
+        width:60px;
+        margin: 10px auto;
         
     }
 
     .forRelative ion-icon {
         position: absolute;
-        right: -6px;
+        right: 4px;
         bottom: 0px;
         cursor: pointer;
        color:blue;
@@ -444,9 +448,9 @@
        }
     
        .containerDivs {
-           width:35vw;
+           max-width:550px;
            height: fit-content;
-            min-height:180px;
+            /* min-height:180px; */
             box-shadow: 1px 1px 3px 0px #888888;
             margin-left:2vw;
             margin-bottom: 10px;
@@ -457,6 +461,9 @@
     
     
        }
+
+        
+
 
        
 
@@ -516,6 +523,113 @@
        .btnsWrapper button:hover {
             color:red;
             transition: 0.3s ease-in-out;
+        }
+
+       
+
+       
+        .comment {
+            padding:4px;
+            color: #000fff;
+            cursor: pointer;
+            
+        }
+ 
+        .comments {
+         height:fit-content;
+            display:none;   
+ 
+        }
+
+        .leaveCommentForm {
+            display: none;
+        }
+
+        .leaveCommentFormActive {
+            display: block;
+        }
+
+        .commentOnPostInput,
+         .comment_to_edit_input {
+            border-radius: 5px;
+            outline: none;
+            border:blue 1px solid;
+            margin: 4px 0px;
+            padding:4px; 
+            }
+
+            .comment_to_edit_input {
+                margin-bottom: 5px;
+            }
+
+        .submitCommentBtn {
+            border:none;
+            border-radius: 5px;
+            padding:5px;
+            background-color: #3B49DF;
+            color: #F9FAFAFA
+        }
+
+        .updateCommentBtn {
+            border:none;
+            border-radius: 5px;
+            padding:5px;
+            background-color: #9ca3f7;
+            color: #F9FAFAFA;
+        }
+
+        .deleteBtnForComment {
+            border:none;
+            border-radius: 5px;
+            padding:5px;
+            background-color: red;
+            color: #F9FAFAFA;
+        }
+
+    
+
+        .commentHeading {
+            margin-top: 20px;
+            color:blue;
+            
+        }
+
+        .commentsActive {
+            display: block;
+            
+        }
+
+        .comments p {
+            width: fit-content;
+            display: inline-block;
+        }
+
+
+        .editBtnForComment {
+            background:none;
+            padding-left: 5px;
+            color:blue;
+            border:none;
+            outline: none;
+            font-size: 11px;
+            display:inline-block;
+        }
+
+        .editCommentForm  {
+            display:none;
+        }
+
+            /* this class is for classlist.toggle in main.js */
+        .editCommentFormActive {
+            display:block;
+        }
+
+        
+
+        .commentUser{
+            display: inline-block;
+            color:black;
+            font-weight:800;
         }
 
 
@@ -673,13 +787,18 @@ background-color: red;
             margin-bottom: 20px;
             position: static;
             padding:10px 10px 0px 10px;
-            width: 200px;
+            width: 95vw;
             font-size: small;
             box-shadow: none;       
         }
  
         .UserCrudentials p {
             margin-bottom: 6px;
+        }
+        .UserCrudentials .name {
+            text-align: center;
+            font-weight: 800;
+            font-size: large;
         }
         .UserCrudentials b {
             display: block;
@@ -776,7 +895,7 @@ background-color: red;
            
         
         .postsContainer {
-            width:80vw;
+            width:100vw;
             margin:auto;
             
     
@@ -784,7 +903,7 @@ background-color: red;
            }
     
            .containerDivs {
-                width:70vw;
+                width:97%;
                 height: fit-content;
                  /* border:1px solid  #282C35; */
                  box-shadow: 1px 1px 3px 0px #888888;
