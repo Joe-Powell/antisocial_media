@@ -136,7 +136,11 @@ if (isset($_SESSION['userId'])) {
     </div>";
 } else {
     //header('Location: index.php');
+<<<<<<< HEAD
     echo " index line 139 here";
+=======
+    echo "index line 139 here";
+>>>>>>> 7b46419134c4ad01d66461afb053a1048a98c326
 }
 
 ?>
