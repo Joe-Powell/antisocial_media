@@ -462,6 +462,10 @@
     
        }
 
+       .anchorFromImageToSeeProfile {
+        text-decoration:none;
+    }
+
         
 
 
@@ -479,9 +483,10 @@
             z-index:1;
         }
 
-       .containerDivs .postImg{
-           width:100%;
-       }
+        .containerDivs .postImg{
+            width:60%;
+            margin-left:20%;
+        }
 
        .containerDivs h3{
            width:fit-content;
