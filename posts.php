@@ -280,18 +280,18 @@ if (isset($_SESSION['userId'])) {
                 if ($profimg) {
 
                     if ($profimg->status == 0) {
-                        echo "<a href='posts.php?user=" . $profimg->userid . "'>
+                        echo "<a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
                         <img class='imgProf'  src='uploads/profileDefault.png' height='50' width='50'>
                         </a>";
                     } else if ($profimg->status == 1) {
 
-                        echo " <a href='posts.php?user=" . $profimg->userid . "'>
+                        echo " <a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
                         <img class='imgProf'  src='uploads/profile" . $profimg->userid . '.' . $profimg->ext . "' height='50' width='50'>
                         </a>
                         ";
                     }
                 } else {
-                    echo "<a href='posts.php?user=" . $profimg->userid . "'>
+                    echo "<a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
                     <img class='imgProf'  src='uploads/profileDefault.png' height='50' width='50'>
                     </a>";
                 }
@@ -454,18 +454,18 @@ if (isset($_SESSION['userId'])) {
                 if ($profimg) {
 
                     if ($profimg->status == 0) {
-                        echo "<a href='posts.php?user=" . $profimg->userid . "'>
+                        echo "<a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
                         <img class='imgProf'  src='uploads/profileDefault.png' height='50' width='50'>
                         </a>";
                     } else if ($profimg->status == 1) {
 
-                        echo " <a href='posts.php?user=" . $profimg->userid . "'>
+                        echo " <a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
                         <img class='imgProf'  src='uploads/profile" . $profimg->userid . '.' . $profimg->ext . "' height='50' width='50'>
                         </a>
                         ";
                     }
                 } else {
-                    echo "<a href='posts.php?user=" . $profimg->userid . "'>
+                    echo "<a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
                     <img class='imgProf'  src='uploads/profileDefault.png' height='50' width='50'>
                     </a>";
                 }
@@ -650,18 +650,18 @@ if (isset($_SESSION['userId'])) {
             if ($profimg) {
 
                 if ($profimg->status == 0) {
-                    echo "<a href='posts.php?user=" . $profimg->userid . "'>
+                    echo "<a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
                     <img class='imgProf'  src='uploads/profileDefault.png' height='50' width='50'>
                     </a>";
                 } else if ($profimg->status == 1) {
 
-                    echo " <a href='posts.php?user=" . $profimg->userid . "'>
+                    echo " <a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
                     <img class='imgProf'  src='uploads/profile" . $profimg->userid . '.' . $profimg->ext . "' height='50' width='50'>
                     </a>
                     ";
                 }
             } else {
-                echo "<a href='posts.php?user=" . $profimg->userid . "'>
+                echo "<a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
                 <img class='imgProf'  src='uploads/profileDefault.png' height='50' width='50'>
                 </a>";
             }

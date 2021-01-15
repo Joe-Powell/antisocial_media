@@ -136,11 +136,11 @@ if (isset($_SESSION['userId'])) {
     </div>";
 } else {
     //header('Location: index.php');
-<<<<<<< HEAD
+
     echo " index line 139 here";
-=======
-    echo "index line 139 here";
->>>>>>> 7b46419134c4ad01d66461afb053a1048a98c326
+
+    
+
 }
 
 ?>
@@ -169,23 +169,22 @@ if (isset($_SESSION['userId'])) {
             ?>
 
 
-            <!-- This will give the Profile picture for every post -->
-            <a href='posts.php?user=<?php echo $profimg->userid ?>'>
-                <img class='imgProf' src='<?php
-                                            if ($profimg) {
+    <!-- This will give the Profile picture for every post -->
+    <a href='posts.php?user=<?php echo $profimg->userid ?>' class='anchorFromImageToSeeProfile'>
+        <img class='imgProf' src='<?php
+                                    if ($profimg) {
 
-                                                if ($profimg->status == 0) {
-                                                    echo 'uploads/profileDefault.png';
-                                                } else if ($profimg->status == 1) {
-                                                    //"<img src='uploads/profile".$profimg->userid.".".$profimg->ext." ' height='50' width='50'>";
-                                                    echo 'uploads/profile' . $profimg->userid . '.' . $profimg->ext;
-                                                }
-                                            } else {
-                                                echo 'uploads/profileDefault.png';
-                                            }
+                                        if ($profimg->status == 0) {
+                                            echo 'uploads/profileDefault.png';
+                                        } else if ($profimg->status == 1) {
+                                            echo 'uploads/profile' . $profimg->userid . '.' . $profimg->ext;
+                                        }
+                                    } else {
+                                        echo 'uploads/profileDefault.png';
+                                    }
 
-                                            ?>' height='60' width='60'>
-            </a>
+                                    ?>' height='60' width='60'>
+    </a>
 
 
 

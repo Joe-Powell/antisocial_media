@@ -1,5 +1,6 @@
-<?php
-// echo '<link rel="stylesheet" href="../style.css">'
+<?php  session_start();
+require "./config/db.php";
+
 ?>
 <div class="containAll">
 

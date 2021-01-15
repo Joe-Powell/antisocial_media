@@ -1,6 +1,0 @@
-
-
-
-http://localhost/social_media_site/practiceDivsForUpdate/
-
-http://localhost/social_media_site

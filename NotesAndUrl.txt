@@ -1,0 +1,12 @@
+
+
+
+http://localhost/social_media_site/practiceDivsForUpdate/
+
+http://localhost/social_media_site
+
+
+
+
+1) index.php 
+has if session echoes out the biography and edit bio which is display none in css
