@@ -1,4 +1,4 @@
-<!-- this page sends to index.php  -->
+<!-- this page sends to posts.php -->
 
 
 
@@ -22,12 +22,16 @@
 
 
   <div class=formContainer>
-    <form class="form-signup" id='formSignup' action="posts.php" method="post"><br>
-      <div id='errorLanding'></div>
-      <input id='username' type="text" name="username"><br>
+    <form class="form-signup" id='form-Signup' action="posts.php" method="post"><br>
+
+
+      <input id='username' type="text" name="username" placeholder='username'><br>
 
       <input id='email' type="text" name="email" placeholder="E-mail"><br>
 
+
+      <label for="location">Name</label>
+      <input type="text" name="name" id="name" placeholder="First/Last">
 
       <label for="location">Location</label>
       <input type="text" name="location" id="location" placeholder='Optional'>
@@ -41,11 +45,12 @@
 
       <label for="pwd">password</label>
 
-      <input id='pwd' required type="password" name="pwd" placeholder="Password"><br>
+      <input id='pwd' type="password" name="pwd" placeholder="Password"><br>
 
-      <input id='pwdRepeat' required type="password" name="pwd-repeat" placeholder="Confirm Password"><br>
+      <input id='pwdRepeat' type="password" name="pwd-repeat" placeholder="Confirm Password"><br>
 
       <button class='submitRegistration' id='submitRegistration' type="submit" name="signup-submit">Submit</button>
+      <div style="color:orange;" id='errorLanding'></div>
 
       <?php if (isset($message)) {  ?>
         <h3><?php echo $message ?></h3>

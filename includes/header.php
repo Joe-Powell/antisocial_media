@@ -21,14 +21,15 @@
         echo '<h3 class="login-status">Please log in here or <a class="signup" href="register.php">Signup</a>&#x1F642;</h3>';
 
         echo ' <div class="contLogSignup"> 
-            <form class="form-login" action="posts.php" method="post">
+            <form class="form-login" id="form-login" action="posts.php" method="post">
                 <label for="unameEmail">Username/Email</label> 
-                <input required type="text" name="unameEmail" id="unameEmail" >
+                <input  type="text" name="unameEmail" id="unameEmail" >
 
                 <label for="pwd">Password</label> 
-                <input required type="password" name="pwd" id="pwd"  >
+                <input type="password" name="pwd" id="pwd"  >
                 
                 <button type="submit" name="login-submit">Login</button>
+                <div style="color:orange;" id="errorLanding"></div>
                 <a class="signup" href="register.php">Signup</a>  
             </form>
         

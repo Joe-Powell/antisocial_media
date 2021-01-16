@@ -224,13 +224,65 @@
             outline: none;
 
        }
-    
+
+
+       /****************** Search Results Page ****************************************************/
+
+       .searchPageContainer {
+        margin: 55px auto;
+        background-color: white;
+        padding:20px;
+        width:350px;
+        display: block;
+       }
+     .searchPageContainer a {
+         text-decoration: none;
+         color:rgb(46, 42, 42);
+     }
+
+     .searchPageContainer .imgProf {
+         height:100px;
+         width:100px;
+         
+     }
+
+     .rowCountUsers {
+        margin: auto;
+        margin-top: 160px;
+        display: block;
+        text-align: center;
+
+
+     }
+
+     .noResultsMsg {
+        margin: 105px auto;
+        background-color: white;
+        padding:20px;
+        width:350px;
+        display: block; 
+     }
  
     
     
                 /*********************************** NavBar styling *********************************************/
     
-    
+    .searchForm {
+        width:fit-content;
+        margin:10px 0px 10px 60px;
+        
+
+
+    }
+
+    .searchInput {
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        height:30px;
+        padding:10px;
+
+    }
     
     .navbar {
         position: fixed;
@@ -255,7 +307,6 @@
         width: 300px;
         height:fit-content;
         margin:0px 100px;
-     
         display: flex;
         justify-content: space-between;
 
@@ -718,7 +769,7 @@ background-color: red;
 }
     
     
-                                                    /*****  450 and below  ******/
+                                                    /*****  520 and below  ******/
        @media screen and (max-width: 520px){
         .navbar {
       
@@ -727,7 +778,7 @@ background-color: red;
              height: 85px;
              width:100vw;
              padding:0px;
-             display: flex;
+             display: block;
             
             
              
@@ -736,9 +787,9 @@ background-color: red;
              
             
             .navbar ul {
-                box-sizing: border-box;
+               
                 height: fit-content;
-                width: 60vw;
+               
               
                 margin: auto;
                 display: flex;

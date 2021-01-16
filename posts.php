@@ -13,6 +13,7 @@ if (isset($_POST['signup-submit'])) {
     $location = $_POST['location'];
     $profession = $_POST['profession'];
     $about = $_POST['about'];
+    $name = $_POST['name'];
 
     if ($password !== $passwordRepeat) {
         $message = "passwords don't match";
@@ -29,8 +30,6 @@ if (isset($_POST['signup-submit'])) {
             $stmt->execute([$username, $email, $password]);
 
 
-
-
             $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? ");
             $stmt->execute([$username]);
             $profile = $stmt->fetch();
@@ -40,7 +39,7 @@ if (isset($_POST['signup-submit'])) {
 
             $stmt = $pdo->prepare("INSERT INTO profileimg(userid, status, location, profession, about, name)       #so when you first sign up it pushes the id into profileimg's userid column
             VALUES(?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$userid, 0, $location, $profession, $about, $usersName]);
+            $stmt->execute([$userid, 0, $location, $profession, $about, $name]);
         }
     }
 }
@@ -150,8 +149,9 @@ if (isset($_POST['editBioSubmission'])) {
     $editLocation = $_POST['editLocation'];
     $editProfession = $_POST['editProfession'];
     $editAbout = $_POST['editAbout'];
+    $editName = $_POST['editName'];
     $the_id = $_POST['the_id'];
-    $stmt = $pdo->prepare("UPDATE profileimg SET location='$editLocation', profession = '$editProfession', about= '$editAbout' WHERE userid = ? ");
+    $stmt = $pdo->prepare("UPDATE profileimg SET location='$editLocation', profession = '$editProfession', about= '$editAbout', name='$editName' WHERE userid = ? ");
     $stmt->execute([$the_id]);
 }
 
@@ -246,17 +246,24 @@ if (isset($_SESSION['userId'])) {
 
             // edit Biography form 
             echo   "<div class='editBiographyContain'>
-                        <form class='editBioForm' action='posts.php' method='POST'>
-                            <ion-icon name='close'></ion-icon>
-                            <input type='hidden' name='the_id' value='$profimg->userid' >
-                            <label for='editLocation'>Location</label> 
-                            <input type='text' name='editLocation' id='editLocation'  value='$profimg->location' >
-                            <label for='editProfession'>Profession</label> 
-                            <input type='text' name='editProfession' id='editProfession'  value='$profimg->profession' >
-                            <label for='editAbout'>About me</label> 
-                            <textarea type='text' name='editAbout' id='editAbout'  value='what value' >$profimg->about</textarea><br>
-                            <button class='submitRegistration'  type='submit' name='editBioSubmission'>Submit Changes</button>
-                        </form>
+            <form class='editBioForm' action='posts.php' method='POST'>
+            <ion-icon name='close'></ion-icon>
+            <input type='hidden' name='the_id' value='$profimg->userid' >
+    
+            <label for='editName'>Name</label> 
+            <input type='text' name='editName' id='editLocation'  value='$profimg->name' >
+    
+            <label for='editLocation'>Location</label> 
+            <input type='text' name='editLocation' id='editLocation'  value='$profimg->location' >
+    
+            <label for='editProfession'>Profession</label> 
+            <input type='text' name='editProfession' id='editProfession'  value='$profimg->profession' >
+    
+            <label for='editAbout'>About me</label> 
+            <textarea type='text' name='editAbout' id='editAbout'  value='what value' >$profimg->about</textarea><br>
+    
+            <button class='submitRegistration'  type='submit' name='editBioSubmission'>Submit Changes</button>
+        </form>
                      </div>";
 
 
@@ -286,7 +293,7 @@ if (isset($_SESSION['userId'])) {
                     } else if ($profimg->status == 1) {
 
                         echo " <a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
-                        <img class='imgProf'  src='uploads/profile" . $profimg->userid . '.' . $profimg->ext . "' height='50' width='50'>
+                        <img class='imgProf'  src='uploads/profile" . $profimg->userid . '.' . $profimg->ext . "?" . mt_rand() . "' height='50' width='50'>
                         </a>
                         ";
                     }
@@ -297,11 +304,7 @@ if (isset($_SESSION['userId'])) {
                 }
 
 
-                //         echo "<form method='post' action='posts.php?user=" . $profimg->userid . "' >
-                //         <input type='submit' value='see profile'>
-                //         </form>
 
-                // ";
 
 
 
@@ -460,7 +463,7 @@ if (isset($_SESSION['userId'])) {
                     } else if ($profimg->status == 1) {
 
                         echo " <a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
-                        <img class='imgProf'  src='uploads/profile" . $profimg->userid . '.' . $profimg->ext . "' height='50' width='50'>
+                        <img class='imgProf'  src='uploads/profile" . $profimg->userid . '.' . $profimg->ext . "?" . mt_rand() . "' height='50' width='50'>
                         </a>
                         ";
                     }
@@ -617,17 +620,24 @@ if (isset($_SESSION['userId'])) {
         // edit Biography form 
 
         echo "<div class='editBiographyContain'>
-                <form class='editBioForm' action='posts.php' method='POST'>
-                    <ion-icon name='close'></ion-icon>
-                    <input type='hidden' name='the_id' value='$profimg->userid' >
-                    <label for='editLocation'>Location</label> 
-                    <input type='text' name='editLocation' id='editLocation'  value='$profimg->location' >
-                    <label for='editProfession'>Profession</label> 
-                    <input type='text' name='editProfession' id='editProfession'  value='$profimg->profession' >
-                    <label for='editAbout'>About me</label> 
-                    <textarea type='text' name='editAbout' id='editAbout'  value='what value' >$profimg->about</textarea><br>
-                    <button class='submitRegistration'  type='submit' name='editBioSubmission'>Submit Changes</button>
-                </form>
+        <form class='editBioForm' action='posts.php' method='POST'>
+        <ion-icon name='close'></ion-icon>
+        <input type='hidden' name='the_id' value='$profimg->userid' >
+
+        <label for='editName'>Name</label> 
+        <input type='text' name='editName' id='editLocation'  value='$profimg->name' >
+
+        <label for='editLocation'>Location</label> 
+        <input type='text' name='editLocation' id='editLocation'  value='$profimg->location' >
+
+        <label for='editProfession'>Profession</label> 
+        <input type='text' name='editProfession' id='editProfession'  value='$profimg->profession' >
+
+        <label for='editAbout'>About me</label> 
+        <textarea type='text' name='editAbout' id='editAbout'  value='what value' >$profimg->about</textarea><br>
+
+        <button class='submitRegistration'  type='submit' name='editBioSubmission'>Submit Changes</button>
+    </form>
             </div>";
 
 
@@ -656,7 +666,7 @@ if (isset($_SESSION['userId'])) {
                 } else if ($profimg->status == 1) {
 
                     echo " <a href='posts.php?user=" . $profimg->userid . "' class='anchorFromImageToSeeProfile'>
-                    <img class='imgProf'  src='uploads/profile" . $profimg->userid . '.' . $profimg->ext . "' height='50' width='50'>
+                    <img class='imgProf'  src='uploads/profile" . $profimg->userid . '.' . $profimg->ext . "?" . mt_rand() . "' height='50' width='50'>
                     </a>
                     ";
                 }

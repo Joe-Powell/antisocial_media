@@ -58,23 +58,27 @@ console.log('main.js connected......');
 
 
 // when a picture is selected, submit will be clicked! problem now is the cashe wont refresh
-profileUpload.addEventListener('change', () => { submit_new_pro_pic.click(); })
-
+if (profileUpload) {
+    profileUpload.addEventListener('change', () => { submit_new_pro_pic.click(); })
+}
 
 
 // when click on profile picture
-imgProf.addEventListener('click', () => {
-    console.log('clicked')
-    profileUploadLabel.click();
 
-})
+// imgProf.addEventListener('click', () => {
+//     console.log('clicked')
+//     profileUploadLabel.click();
+
+// })
 
 // also when you click the camera
-cameraProf.addEventListener('click', () => {
-    console.log('clicked')
-    profileUploadLabel.click();
+if (cameraProf) {
+    cameraProf.addEventListener('click', () => {
+        console.log('clicked')
+        profileUploadLabel.click();
 
-})
+    })
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -157,6 +161,50 @@ for (let i = 0; i < commentHeading.length; i++) {
 
 
 
+/////////////Register Form Validations  and Login  ------------------------------------------------------------------
+//Register
+let formSignup = document.getElementById('form-Signup');
+let username = document.getElementById('username');
+let email = document.getElementById('email');
+let pwd = document.getElementById('pwd');
+let pwdRepeat = document.getElementById('pwdRepeat');
+let errorLanding = document.getElementById('errorLanding');
+
+if (formSignup) {
+    formSignup.addEventListener('submit', (e) => {
+
+        if (username.value == '' || email.value == '' || pwd.value == '' || pwdRepeat.value == '') {
+            e.preventDefault();
+            errorLanding.innerHTML = 'Please fill fields not marked \"Optional\"';
+        }
+
+    })
+}
+
+
+
+// Login ----
+
+let formLogin = document.getElementById('form-login');
+let unameEmail = document.getElementById('unameEmail');
+//let pwd = document.getElementById('pwd');
+
+formLogin.addEventListener('submit', (e) => {
+    if (unameEmail.value == '' || pwd.value == '') {
+        e.preventDefault();
+        errorLanding.innerHTML = 'Please fill in fields';
+    }
+
+
+})
+
+
+
+
+
+
+
+//----------------------------------------------------------------------------------------------------------
 
 
 
