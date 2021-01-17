@@ -8,8 +8,10 @@ if (isset($_POST['submitSearchUsers'])) {
 
     $nameSearched = $_POST['searchInput'];
 
-    $stmt = $pdo->prepare("SELECT * FROM profileimg WHERE name Like ? ");
-    $params = array("%$nameSearched%");
+    $stmt = $pdo->prepare("SELECT * FROM profileimg WHERE name Like ? OR name LIKE ? ");
+
+    $params = array("%$nameSearched%", "%$nameSearched[0]%");
+
     $stmt->execute($params);
     $totalUsers = $stmt->rowCount();
     $profimg = $stmt->fetchAll();

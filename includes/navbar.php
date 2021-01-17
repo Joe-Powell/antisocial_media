@@ -60,8 +60,14 @@ require "./config/db.php";
     </ul>
     <div class='searchUserDiv'>
         <form class='searchForm' action='searchResults.php' method='post'>
+            <button type="submit" name='submitSearchUsers'>
+                <ion-icon name="search-outline"></ion-icon>
+            </button>
             <input type='text' name='searchInput' class='searchInput' placeholder='Search Users'>
-            <button type='submit' name='submitSearchUsers' hidden='hidden'>Search</button>
         </form>
     </div>
+    <!-- OLD  <form class='searchForm' action='searchResults.php' method='post'>
+        <input type='text' name='searchInput' class='searchInput' placeholder='Search Users'>
+        <button type='submit' name='submitSearchUsers' hidden='hidden'>Search</button>
+    </form> -->
 </nav>

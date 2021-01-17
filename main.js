@@ -188,15 +188,16 @@ if (formSignup) {
 let formLogin = document.getElementById('form-login');
 let unameEmail = document.getElementById('unameEmail');
 //let pwd = document.getElementById('pwd');
+if (formLogin) {
+    formLogin.addEventListener('submit', (e) => {
+        if (unameEmail.value == '' || pwd.value == '') {
+            e.preventDefault();
+            errorLanding.innerHTML = 'Please fill in fields';
+        }
 
-formLogin.addEventListener('submit', (e) => {
-    if (unameEmail.value == '' || pwd.value == '') {
-        e.preventDefault();
-        errorLanding.innerHTML = 'Please fill in fields';
-    }
 
-
-})
+    })
+}
 
 
 
