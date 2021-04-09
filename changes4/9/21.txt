@@ -1,0 +1,19 @@
+
+------------------------------index.php changes to make posts public------------------------------------------------------------------------------
+*in index.php took "if(isset($_SESSION['userId'])) { }"  and wrapped the biography with it, around line 107
+
+*Then around line 158  I had to make changes to "<div class="postsContainer">"  
+    and remove the "if (isset($_SESSION['userId'])) { }" so it can be public. 
+
+*there was still 2 errors so I had to change the edit button (around line 197) to 
+    "if (isset($_SESSION['userId']) && $_SESSION['userId'] == $post->inputId) {" so that it would
+    only take effect if the $_SESSION was set. The second error (around line 249) was the editAbsoluteDiv
+    because it also had "if ($_SESSION['userId'] == $post->inputId) { }"
+    so I had to make it into "if (isset($_SESSION['userId']) && $_SESSION['userId'] == $post->inputId) {".
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
