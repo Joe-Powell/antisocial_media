@@ -1,6 +1,67 @@
 
+//----------When click on Login and Create Account buttons on navbar make Appear ---------------------------------------------------------------------------
+
+const loginBtnNav = document.querySelector('.loginBtnNav');
+const contLogSignup = document.querySelector('.contLogSignup');
+
+if (loginBtnNav) {
+    loginBtnNav.addEventListener('click', () => {
+        contLogSignup.classList.toggle('toggleLoginForm');
+    })
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+
+const searchIcon = document.querySelector('.searchIcon');
+const searchUserDiv = document.querySelector('.searchUserDiv');
+
+searchIcon.addEventListener('click', () => {
 
 
+    searchUserDiv.classList.toggle('searchUserDivToggle');
+
+
+})
+
+
+
+
+
+
+
+
+
+
+//--------------------- when click on .searchIcon -----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------- END-> when click on .searchIcon -----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+//---------editBtn ---------------------------------------------------------------------------------------------------------------------------------
 
 let editAbsoluteDiv = document.querySelectorAll('.editAbsoluteDiv');
 let editBtn = document.querySelectorAll('.editBtn');
@@ -33,8 +94,7 @@ for (let i = 0; i < editBtn.length; i++) {
     })
 
 }
-
-
+//---------END>  editBtn  ---------------------------------------------------------------------------------------------------------------
 
 
 ////////////////////////////////////////////Profil picture changing/////////////////////////////////
@@ -80,7 +140,7 @@ if (cameraProf) {
     })
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////END> pprofile picture changing//////////////////////////////////////////////////////////////////////
 
 
 
@@ -186,17 +246,20 @@ if (formSignup) {
 // Login ----
 
 let formLogin = document.getElementById('form-login');
-let unameEmail = document.getElementById('unameEmail');
-//let pwd = document.getElementById('pwd');
+if (formLogin) {
+    let unameEmail = document.getElementById('unameEmail');
+    //let pwd = document.getElementById('pwd');
 
-formLogin.addEventListener('submit', (e) => {
-    if (unameEmail.value == '' || pwd.value == '') {
-        e.preventDefault();
-        errorLanding.innerHTML = 'Please fill in fields';
-    }
+    formLogin.addEventListener('submit', (e) => {
+        if (unameEmail.value == '' || pwd.value == '') {
+            e.preventDefault();
+            errorLanding.innerHTML = 'Please fill in fields';
+        }
 
 
-})
+    })
+
+}
 
 
 

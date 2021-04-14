@@ -12,8 +12,40 @@
     so I had to make it into "if (isset($_SESSION['userId']) && $_SESSION['userId'] == $post->inputId) {".
 
 
+* make so only logged in people can leave a comment, just the same old " <?php if (isset($_SESSION['userId'])) { ?>  then <?php } ?>"
+
+ also had an error for edit button, it couldnt detect userid so had to add the if (isset()) function then the && (around line 298)
+  "if (isset($_SESSION['userId']) && $_SESSION['userId'] ==  $comment->user_id_of_comment) {  } "                                                                                               
+
+-------------------------END> index.php changes to make posts public--------------------------------------------------------------------
 
 
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------show navbar, editing in navbar.php and header.php---------------------------------------------------------------------------------
+ *also included "include "navbar.php";" inside header.php after the else statement
+
+ * wrapped Profile and Post with  "<?php if (isset($_SESSION['userId'])) { ?>"  AND  " <?php } ?>" so it won't show for non logged in users.
+
+ *add a "login" and "Create Account" button to the navbar. made some styling in css too.
+    
+* made a class in css alled ".toggleLoginForm" then in main.js made a classList.toggle('toggleLoginForm')
+
+
+
+
+
+
+
+
+--------------END> show navbar editing in navbar.php and header.php-----------------------------------------------------------------------------
+
+files changed...
+index.php
+style.cssmain.js
+register.php
+includes/header.php
+includes/navbar.php

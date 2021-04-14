@@ -14,12 +14,11 @@
 </head>
 
 <body>
-
-  <h3 class="login-status">you can register your new account here or <a class="signup" href="index.php">Login</a> &#x1F642;</h3>
-
-
+  <?php //include "./includes/navbar.php";    
+  ?>
 
 
+  <h3 class="login-status">You can register your new account here or back to <a class="signup" href="index.php">Home</a></h3>
 
   <div class=formContainer>
     <form class="form-signup" id='form-Signup' action="posts.php" method="post"><br>

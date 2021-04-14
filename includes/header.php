@@ -18,9 +18,9 @@
     if (isset($_SESSION['userId'])) {
         include "navbar.php";
     } else {
-        echo '<h3 class="login-status">Please log in here or <a class="signup" href="register.php">Signup</a>&#x1F642;</h3>';
+        include "navbar.php";
 
-        echo ' <div class="contLogSignup"> 
+        echo ' <div class="contLogSignup "> 
             <form class="form-login" id="form-login" action="posts.php" method="post">
                 <label for="unameEmail">Username/Email</label> 
                 <input  type="text" name="unameEmail" id="unameEmail" >

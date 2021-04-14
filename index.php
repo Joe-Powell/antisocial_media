@@ -199,12 +199,8 @@ if (isset($_SESSION['userId'])) {
                     <button class='editBtn'>Edit</button>
                 </div>
 
-            <?php } else { ?>
-                <div class="btnsWrapper">
-                    <button class='editBtn'>Hello</button>
-                </div>
+            <?php }  ?>
 
-            <?php } ?>
 
 
 
@@ -299,7 +295,7 @@ if (isset($_SESSION['userId'])) {
                     <br><small class='commentUser'>$comment->user_name_of_comment</small>
                     <p>$comment->thecomment</p>";
 
-                    if ($_SESSION['userId'] ==  $comment->user_id_of_comment) {
+                    if (isset($_SESSION['userId']) && $_SESSION['userId'] ==  $comment->user_id_of_comment) {
                         echo "<button class='editBtnForComment'>Edit</button>";
                         //  form for editing the comment 
                         echo " <form action='index.php' method='post' class='editCommentForm'>
@@ -314,14 +310,17 @@ if (isset($_SESSION['userId'])) {
 
 
                 ?>
-                <h5 class='commentHeading'>Add Comment</h5>
-                <form method='post' action='index.php' class='leaveCommentForm'>
-                    <input name='commentOnPost' class='commentOnPostInput' type='text'>
-                    <input name='post_id' class='postId' type='hidden' value='<?php echo $post->id ?>'>
-                    <input name='user_id_of_comment' type='hidden' value='<?php echo $_SESSION['userId']  ?>'>
-                    <input name='user_name_of_comment' type='hidden' value='<?php echo $_SESSION['username']  ?>'>
-                    <input type='submit' name='submitComment' class='submitCommentBtn' value='Submit'>
-                </form>
+
+                <?php if (isset($_SESSION['userId'])) { ?>
+                    <h5 class='commentHeading'>Add Comment</h5>
+                    <form method='post' action='index.php' class='leaveCommentForm'>
+                        <input name='commentOnPost' class='commentOnPostInput' type='text'>
+                        <input name='post_id' class='postId' type='hidden' value='<?php echo $post->id ?>'>
+                        <input name='user_id_of_comment' type='hidden' value='<?php echo $_SESSION['userId']  ?>'>
+                        <input name='user_name_of_comment' type='hidden' value='<?php echo $_SESSION['username']  ?>'>
+                        <input type='submit' name='submitComment' class='submitCommentBtn' value='Submit'>
+                    </form>
+                <?php } ?>
 
             </div><br>
             <!-- comments end here -->

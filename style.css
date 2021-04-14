@@ -13,6 +13,149 @@
 
         background-color: #f8f8f2;
      }
+
+       /*---------------------------------------- navbar ------------------------------------------------------------------------------*/
+
+
+    .searchUserDiv {
+        display: block;
+        margin:auto;
+        
+    }
+    .searchForm {
+        width:fit-content;
+       
+     
+    }
+
+    .searchInput {
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        height:30px;
+        width:90%;
+        padding:10px; 
+
+    }
+
+
+    
+
+
+    
+    .navbar {
+        position: fixed;
+        z-index: 3;
+        top: 0px;
+        background-color: rgb(250, 245, 245); 
+        width:100vw;
+        height:fit-content;
+        padding:10px;
+        display: flex;
+
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+       
+        
+      
+    }
+    
+    
+  
+    .navbar ul {
+        background-color: rgb(250, 245, 245); 
+        box-sizing: border-box;
+        width: 350px;
+        height:fit-content;
+        margin:auto;
+        display: flex;
+        justify-content: space-between;
+
+       }
+
+       .navbar ul a{
+        text-decoration: none;
+        width:fit-content;
+        }
+    
+    .navbar ul li{
+      list-style: none;
+      padding:3px;
+      background-color:  rgb(250, 245, 245) ;
+      top: 0px;
+     
+      color:#00000099; 
+      font-size: 20px;
+      width:fit-content;
+     
+    
+        }
+
+    .containerDivs .imgProf {
+        border-radius: 100%;
+        margin :0px 0px 0px 0px;
+        cursor: pointer;
+
+    }
+    
+
+    .profileUploadForm {
+        display: none;
+
+        }    
+
+    
+    
+    .navbar ul button {
+       border:none;
+       background-color: rgb(250, 245, 245) ;
+       color:red;
+      padding-bottom:3px;
+       font-size: 20px;
+       width:fit-content;
+        }
+    
+   
+    
+    
+    .navbar ul .loginBtnNav {
+            color: blue;
+        }
+    .navbar ul .createAccountBtnNav {
+            background: blue;
+            color: white;
+            height: fit-content;
+            padding: 2.5px 4px;
+            border-radius: 5px;
+
+           
+        }
+
+    .searchIcon {
+        margin:auto;
+        display: none;
+    
+    }
+
+         /*  div for profile pic and camera icon*/
+    .forRelative {
+        position: relative;
+        height:fit-content;
+        width:60px;
+        margin: 10px auto;
+        
+    }
+
+    .forRelative ion-icon {
+        position: absolute;
+        right: 4px;
+        bottom: 0px;
+        cursor: pointer;
+       color:blue;
+    }
+    
+
+    /* ------------------END> Navbar styling -------------------------------------------------*/
+        
    
 
      #editProImgBtn {
@@ -28,15 +171,19 @@
     
     .contLogSignup {
         text-align: center;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: space-between;
         padding:10px;
         margin: auto;
-        
         width:280px;
         background-color: blue;
         border:1px solid blue;
+        transition: 1s;
+    }
+
+    .toggleLoginForm {
+        display:flex;
     }
     
     
@@ -81,8 +228,9 @@
 
 
     .login-status {
-       padding:20px 20px;
-       text-align:center;
+        margin-top: 80px;
+        padding:20px 20px;
+        text-align:center;
     }
 
   
@@ -265,157 +413,7 @@
  
     
     
-                /*********************************** NavBar styling *********************************************/
-    
-    .searchForm {
-        width:fit-content;
-        margin:10px 0px 10px 60px;
-        
-
-
-    }
-
-    .searchInput {
-        border-radius: 10px;
-        border: none;
-        outline: none;
-        height:30px;
-        padding:10px;
-
-    }
-    
-    .navbar {
-        position: fixed;
-        z-index: 3;
-        top: 0px;
-        background-color: rgb(250, 245, 245); 
-        
-        width:100vw;
-        height:80px;
-        padding:10px;
-         display: flex;
-         /* justify-content: space-between;   */
-        
-      
-    }
-    
-    
-  
-    .navbar ul {
-        background-color: rgb(250, 245, 245); 
-        box-sizing: border-box;
-        width: 300px;
-        height:fit-content;
-        margin:0px 100px;
-        display: flex;
-        justify-content: space-between;
-
-       }
-
-       .imgProf {
-          
-        border-radius: 100%;
-        margin :0px 0px 0px 0px;
-        cursor: pointer;
-       
-        }
-
-        .containerDivs .imgProf {
-        border-radius: 100%;
-        margin :0px 0px 0px 0px;
-
-        }
-
-                    /* font awesome icons */
-       .navbar .fa-home, .fa-user-friends, .fa-download, .fa-expeditedssl {
-            color:#00000099; 
-           width:100%;
-           text-align: center;
-          
-       }
-       
-
-        .profileUploadForm {
-            display: none;
-
-         }    
-
-    
-    
-    .navbar ul button {
-       border:none;
-       background-color: rgb(250, 245, 245) ;
-       color:red;
-      padding-bottom:3px;
-       font-size: 20px;
-       width:fit-content;
-        }
-    
-   
-    
-    .navbar ul a{
-        text-decoration: none;
-        width:fit-content;
-        }
-    
-    .navbar ul li{
-      list-style: none;
-      padding:3px;
-      background-color:  rgb(250, 245, 245) ;
-      top: 0px;
-     
-      color:#00000099; 
-      font-size: 20px;
-      width:fit-content;
-     
-    
-        }
-
-         /*  div for profile pic and camera icon*/
-    .forRelative {
-        position: relative;
-        height:fit-content;
-        width:60px;
-        margin: 10px auto;
-        
-    }
-
-    .forRelative ion-icon {
-        position: absolute;
-        right: 4px;
-        bottom: 0px;
-        cursor: pointer;
-       color:blue;
-    }
-    
-
-        .navbar ul a:hover{
-            
-        }
-                   
-        .navbar ul li:hover{
-            /* color:black;
-            transition: 0.5s ease-in-out; */
-
-    
-        }
-
-        /* .navbar .fa-home:hover, .fa-user-friends:hover, .fa-download:hover {
-            color:black;
-        } */
-
-
-        .navbar ul a:hover, .fa-home:hover, .fa-user-friends:hover, .fa-download:hover{
-            /* color:black; */
-        }
-
-
-        .navbar ul button:hover{
-            
-         
-    
-        }
-        
+              
         
   
     
@@ -458,10 +456,10 @@
      
     
        .add-post [type='submit'] {
-        background-color: white;
-        border: none;
-        color:blue;
-       font-size: 20px;
+            background-color: white;
+            border: none;
+            color:blue;
+            font-size: 20px;
     
     
        }
@@ -477,20 +475,17 @@
        
        
        
-                    /* posts.php  */
+    /* ------------------------------ posts.php---------------------------------  */
       
       
       
     
        .postsContainer {
-       display: inline-block;
-        padding-top: 100px;
-        width:50vw;
-        margin-left: 215px; 
-        
-        
-          
-    }
+            display: inline-block;
+            padding-top: 100px;
+            width:50vw;
+            margin-left: 215px; 
+        }
     
     
        .postsContainer .heading {
@@ -771,32 +766,29 @@ background-color: red;
     
                                                     /*****  520 and below  ******/
        @media screen and (max-width: 520px){
-        .navbar {
-      
-            position: fixed;
-            z-index: 3;
-             height: 85px;
-             width:100vw;
-             padding:0px;
-             display: block;
-            
-            
-             
-             }
+           /* navbar------------------------------------------------------------------- */
+    .navbar {
+        position: fixed;
+        z-index: 3;
+        height: fit-content;
+        width:100vw;
+        padding:0px;
+        display: block;
+        
+        }
 
-             
             
-            .navbar ul {
-               
-                height: fit-content;
-               
-              
-                margin: auto;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                
-               }
+        
+        .navbar ul {
+            height: fit-content;
+            width:90vw;
+            padding:10px 5px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            }
 
 
           
@@ -809,17 +801,44 @@ background-color: red;
         
          .navbar ul button {
             font-size: 20px;
-
-             
-             
-         }
+            }
         
-         .navbar .imgProf {
-            height:50px;
-            width:50px;
-          margin:auto;
+        .searchIcon {
+            margin:auto;
+            display: inline-block;
+            cursor: pointer;
+            color:black;
+            }
+        
+         .searchUserDiv {
+            display: none;
+        }
+
+        .searchUserDivToggle {
+            display: block;
+        }
+
+        .searchForm {
+            width:100%;
+            padding:0px 0px 15px 20px ; 
+            margin: auto;
+         
+        }
     
-           }
+        .searchInput {
+            border-radius: 9px;
+            border: none;
+            outline: none;
+             height:40px;
+             width:70%;
+           
+            padding:10px; 
+    
+        }
+
+   
+
+     
 
            /*  div for profile pic and camera icon*/
     .forRelative {
@@ -834,6 +853,13 @@ background-color: red;
         bottom: 0px;
         cursor: pointer;
        color:blue;
+    }
+
+     /* END> navbar ------------------------------------------------------------------ */
+
+    .toggleLoginForm {
+        display:flex;
+        margin-top: 95px;
     }
 
             /* Biography and edit bio */
@@ -948,11 +974,16 @@ background-color: red;
             display: flex;
             flex-direction: column;
            }  
+
+          
            
         
         .postsContainer {
+            display: inline-block;
+            padding-top: 80px;
             width:100vw;
             margin:auto;
+            
             
     
             
